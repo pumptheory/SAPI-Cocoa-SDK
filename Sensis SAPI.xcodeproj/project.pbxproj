@@ -12,7 +12,6 @@
 		64493DE6151985E100A64AA6 /* SAPIEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 64493DE5151985E100A64AA6 /* SAPIEndpoint.m */; };
 		64493DE9151985F900A64AA6 /* SAPISearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 64493DE8151985F900A64AA6 /* SAPISearch.m */; };
 		64493DEC1519871400A64AA6 /* SAPIResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 64493DEB1519871400A64AA6 /* SAPIResult.m */; };
-		64493DEF1519872500A64AA6 /* SAPISearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 64493DEE1519872500A64AA6 /* SAPISearchResult.m */; };
 		6449400915198AE600A64AA6 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 64493FAB15198AE600A64AA6 /* AFHTTPClient.m */; };
 		6449400A15198AE600A64AA6 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 64493FAD15198AE600A64AA6 /* AFHTTPRequestOperation.m */; };
 		6449400B15198AE600A64AA6 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 64493FAF15198AE600A64AA6 /* AFImageRequestOperation.m */; };
@@ -24,6 +23,9 @@
 		6449401115198AE600A64AA6 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 64493FBC15198AE600A64AA6 /* AFXMLRequestOperation.m */; };
 		6449401215198AE600A64AA6 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 64493FBE15198AE600A64AA6 /* UIImageView+AFNetworking.m */; };
 		6449402415198AE600A64AA6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 64493FE015198AE600A64AA6 /* LICENSE */; };
+		6449403E1519ABFC00A64AA6 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 6449403A1519ABFC00A64AA6 /* CHANGELOG.md */; };
+		6449403F1519ABFC00A64AA6 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6449403C1519ABFC00A64AA6 /* JSONKit.m */; };
+		644940401519ABFC00A64AA6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6449403D1519ABFC00A64AA6 /* README.md */; };
 		64AB066B151977F0009C66A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AB066A151977F0009C66A8 /* UIKit.framework */; };
 		64AB066D151977F0009C66A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AB066C151977F0009C66A8 /* Foundation.framework */; };
 		64AB066F151977F0009C66A8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AB066E151977F0009C66A8 /* CoreGraphics.framework */; };
@@ -62,8 +64,6 @@
 		64493DE8151985F900A64AA6 /* SAPISearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAPISearch.m; path = "Sensis SAPI/SAPISearch.m"; sourceTree = "<group>"; };
 		64493DEA1519871400A64AA6 /* SAPIResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAPIResult.h; path = "Sensis SAPI/SAPIResult.h"; sourceTree = "<group>"; };
 		64493DEB1519871400A64AA6 /* SAPIResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAPIResult.m; path = "Sensis SAPI/SAPIResult.m"; sourceTree = "<group>"; };
-		64493DED1519872500A64AA6 /* SAPISearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAPISearchResult.h; path = "Sensis SAPI/SAPISearchResult.h"; sourceTree = "<group>"; };
-		64493DEE1519872500A64AA6 /* SAPISearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAPISearchResult.m; path = "Sensis SAPI/SAPISearchResult.m"; sourceTree = "<group>"; };
 		64493FAA15198AE600A64AA6 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		64493FAB15198AE600A64AA6 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		64493FAC15198AE600A64AA6 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -86,6 +86,11 @@
 		64493FBD15198AE600A64AA6 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		64493FBE15198AE600A64AA6 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		64493FE015198AE600A64AA6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		644940381519A07D00A64AA6 /* SAPIAccountKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPIAccountKey.h; sourceTree = "<group>"; };
+		6449403A1519ABFC00A64AA6 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		6449403B1519ABFC00A64AA6 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		6449403C1519ABFC00A64AA6 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		6449403D1519ABFC00A64AA6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		64AB0666151977F0009C66A8 /* Sensis SAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sensis SAPI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64AB066A151977F0009C66A8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		64AB066C151977F0009C66A8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -137,6 +142,7 @@
 		64493FA715198AE600A64AA6 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				644940391519ABFC00A64AA6 /* JSONKit */,
 				64493FA815198AE600A64AA6 /* AFNetworking */,
 			);
 			path = Externals;
@@ -179,6 +185,17 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		644940391519ABFC00A64AA6 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				6449403A1519ABFC00A64AA6 /* CHANGELOG.md */,
+				6449403B1519ABFC00A64AA6 /* JSONKit.h */,
+				6449403C1519ABFC00A64AA6 /* JSONKit.m */,
+				6449403D1519ABFC00A64AA6 /* README.md */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
 		64AB065B151977F0009C66A8 = {
 			isa = PBXGroup;
 			children = (
@@ -213,13 +230,14 @@
 		64AB0670151977F0009C66A8 /* Test iPhone App */ = {
 			isa = PBXGroup;
 			children = (
+				644940381519A07D00A64AA6 /* SAPIAccountKey.h */,
 				64493FA715198AE600A64AA6 /* Externals */,
 				64AB0679151977F0009C66A8 /* SAPIAppDelegate.h */,
 				64AB067A151977F0009C66A8 /* SAPIAppDelegate.m */,
+				64AB0671151977F0009C66A8 /* Supporting Files */,
 				64AB067C151977F0009C66A8 /* SAPIMasterViewController.h */,
 				64AB067D151977F0009C66A8 /* SAPIMasterViewController.m */,
 				64AB0682151977F0009C66A8 /* SAPIMasterViewController.xib */,
-				64AB0671151977F0009C66A8 /* Supporting Files */,
 				64AB06AB15197B33009C66A8 /* SAPISearchViewController.h */,
 				64AB06AC15197B33009C66A8 /* SAPISearchViewController.m */,
 				64AB06AD15197B33009C66A8 /* SAPISearchViewController.xib */,
@@ -270,8 +288,6 @@
 				64493DE5151985E100A64AA6 /* SAPIEndpoint.m */,
 				64493DEA1519871400A64AA6 /* SAPIResult.h */,
 				64493DEB1519871400A64AA6 /* SAPIResult.m */,
-				64493DED1519872500A64AA6 /* SAPISearchResult.h */,
-				64493DEE1519872500A64AA6 /* SAPISearchResult.m */,
 			);
 			name = "Sensis SAPI";
 			sourceTree = "<group>";
@@ -351,6 +367,8 @@
 				64AB0684151977F0009C66A8 /* SAPIMasterViewController.xib in Resources */,
 				64AB06AF15197B33009C66A8 /* SAPISearchViewController.xib in Resources */,
 				6449402415198AE600A64AA6 /* LICENSE in Resources */,
+				6449403E1519ABFC00A64AA6 /* CHANGELOG.md in Resources */,
+				644940401519ABFC00A64AA6 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +412,6 @@
 				64493DE6151985E100A64AA6 /* SAPIEndpoint.m in Sources */,
 				64493DE9151985F900A64AA6 /* SAPISearch.m in Sources */,
 				64493DEC1519871400A64AA6 /* SAPIResult.m in Sources */,
-				64493DEF1519872500A64AA6 /* SAPISearchResult.m in Sources */,
 				6449400915198AE600A64AA6 /* AFHTTPClient.m in Sources */,
 				6449400A15198AE600A64AA6 /* AFHTTPRequestOperation.m in Sources */,
 				6449400B15198AE600A64AA6 /* AFImageRequestOperation.m in Sources */,
@@ -405,6 +422,7 @@
 				6449401015198AE600A64AA6 /* AFURLConnectionOperation.m in Sources */,
 				6449401115198AE600A64AA6 /* AFXMLRequestOperation.m in Sources */,
 				6449401215198AE600A64AA6 /* UIImageView+AFNetworking.m in Sources */,
+				6449403F1519ABFC00A64AA6 /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,7 +546,7 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Sensis SAPI/Sensis SAPI-Prefix.pch";
+				GCC_PREFIX_HEADER = "Test iPhone App/Sensis SAPI-Prefix.pch";
 				INFOPLIST_FILE = "Sensis SAPITests/Sensis SAPITests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -545,7 +563,7 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Sensis SAPI/Sensis SAPI-Prefix.pch";
+				GCC_PREFIX_HEADER = "Test iPhone App/Sensis SAPI-Prefix.pch";
 				INFOPLIST_FILE = "Sensis SAPITests/Sensis SAPITests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";

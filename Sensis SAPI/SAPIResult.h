@@ -10,4 +10,18 @@
 
 @interface SAPIResult : NSObject
 
+@property (retain) NSArray * results;
+@property NSUInteger count;
+@property NSUInteger totalResults;
+@property NSUInteger currentPage;
+@property NSUInteger totalPages;
+@property (retain) NSString * executedQuery;
+@property (retain) NSString * originalQuery;
+@property (retain) NSDate * date;
+@property NSUInteger time;
+@property NSInteger code;
+
++ (SAPIResult *)resultWithJSONDictionary:(NSDictionary *)jsonDictionary;
+- (id)initWithJSONDictionary:(NSDictionary *)jsonDictionary;
+
 @end

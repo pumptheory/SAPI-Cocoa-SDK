@@ -20,5 +20,10 @@ typedef enum {
 
 + (void)setEnvironment:(SAPIEnvironment)environment;
 + (SAPIEnvironment)environement;
++ (NSString *)environmentString;
++ (NSString *)scheme;
++ (NSString *)host;
++ (NSString *)pathPrefix;
+
 
 @end

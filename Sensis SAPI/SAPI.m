@@ -49,5 +49,27 @@ static SAPIEnvironment _environment = SAPIEnvironmentTest;
     }
 }
 
++ (NSString *)environmentString
+{
+    if (_environment == SAPIEnvironmentTest)
+        return @"test";
+    
+    return @"prod";
+}
+
++ (NSString *)scheme;
+{
+    return @"http";
+}
+
++ (NSString *)host
+{
+    return @"api.sensis.com.au";
+}
+
++ (NSString *)pathPrefix
+{
+    return @"ob-20110511/";
+}
 
 @end

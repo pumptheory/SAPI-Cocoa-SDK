@@ -10,6 +10,8 @@
 
 const NSString * SAPIErrorDomain = @"com.sensis.sapi.ErrorDomain";
 const NSString * SAPIErrorValidationErrorsKey = @"com.sensis.sapi.ValidationErrors";
+const NSString * SAPIErrorHTTPStatusCodeKey = @"com.sensis.sapi.HTTPStatusCode";
+
 
 @implementation SAPIError
 
@@ -17,6 +19,7 @@ const NSString * SAPIErrorValidationErrorsKey = @"com.sensis.sapi.ValidationErro
             errorDescription:(NSString *)description
                failureReason:(NSString *)failureReason
             validationErrors:(NSArray *)validationErrors
+              httpStatusCode:(NSInteger)httpStatusCode
 {
     NSMutableDictionary * userInfo = [NSMutableDictionary dictionary];
 
@@ -29,12 +32,19 @@ const NSString * SAPIErrorValidationErrorsKey = @"com.sensis.sapi.ValidationErro
     if (validationErrors)
         [userInfo setObject:validationErrors forKey:SAPIErrorValidationErrorsKey];
     
+    [userInfo setObject:[NSNumber numberWithInteger:httpStatusCode] forKey:SAPIErrorHTTPStatusCodeKey];
+    
     return [self errorWithDomain:(NSString *)SAPIErrorDomain code:code userInfo:userInfo];
 }
 
 - (NSString *)validationErrors
 {
     return [[self userInfo] objectForKey:SAPIErrorValidationErrorsKey];
+}
+
+- (NSInteger)httpStatusCode
+{
+    return [[[self userInfo] objectForKey:SAPIErrorHTTPStatusCodeKey] integerValue];
 }
 
 @end

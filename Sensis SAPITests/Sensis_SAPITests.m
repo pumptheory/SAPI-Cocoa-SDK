@@ -8,13 +8,18 @@
 
 #import "Sensis_SAPITests.h"
 
+#import "SAPI.h"
+#import "SAPIAccountKey.h"
+#import "SAPISearch.h"
+
 @implementation Sensis_SAPITests
 
 - (void)setUp
 {
     [super setUp];
     
-    // Set-up code here.
+    [SAPI setKey:SAPI_KEY];
+    [SAPI setEnvironment:SAPI_ENVIRONMENT];
 }
 
 - (void)tearDown
@@ -24,9 +29,16 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testSearch
 {
-    STFail(@"Unit tests are not implemented yet in Sensis SAPITests");
+    SAPISearch * searchQuery = [[SAPISearch alloc] init];
+    searchQuery.query = @"Apple";
+    SAPIError * error = nil;
+    SAPIResult * res = [searchQuery performQueryWithError:&error];
+    
+    STAssertNotNil(res, [NSString stringWithFormat:@"Simple Search query returned no results (%@)", error]);
+    
+    NSLog(@"testSearchResults: %@", res.results);
 }
 
 @end

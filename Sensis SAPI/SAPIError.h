@@ -9,9 +9,8 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    SAPIErrorValidationError = 1000,  // corresponds to SAPI HTTP status 400
-                                      // - see localizedDescription, failureReason and validationErrors
-    SAPIErrorServerError              // ie. the REST Api has returned an HTTP 500 response - see localisedDescription and failureReason
+    SAPIErrorServerError = -1, // ie. the REST Api has returned an HTTP 500 response - see localisedDescription, failureReason and httpStatusCode
+    SAPIErrorValidationError = 400, // - see localizedDescription, failureReason and validationErrors
 } SAPIErrorCode;
 
 const NSString * SAPIErrorDomain;
@@ -21,8 +20,10 @@ const NSString * SAPIErrorDomain;
 + (SAPIError *)errorWithCode:(SAPIErrorCode)code
             errorDescription:(NSString *)description
                failureReason:(NSString *)failureReason
-            validationErrors:(NSArray *)validationErrors;
+            validationErrors:(NSArray *)validationErrors
+              httpStatusCode:(NSInteger)httpStatusCode;
 
 - (NSArray *)validationErrors; // an array of strings describing all the validation errors
+- (NSInteger)httpStatusCode;
 
 @end

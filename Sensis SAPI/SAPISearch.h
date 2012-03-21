@@ -7,7 +7,7 @@
 //
 
 #import "SAPIEndpoint.h"
-#import "SAPISearchResult.h"
+#import "SAPIResult.h"
 #import "SAPIError.h"
 
 @interface SAPISearch : SAPIEndpoint
@@ -15,8 +15,9 @@
 @property (copy) NSString * query;
 @property (copy) NSString * location;
 
-- (SAPISearchResult *)performQueryWithError:(SAPIError **)error;
-- (void)performQueryAsyncWithCallback:(void (^)(SAPISearchResult * result, SAPIError * error))callbackBlock;
+- (SAPIResult *)performQueryWithError:(SAPIError **)error;
 
+- (void)performQueryAsyncSuccess:(void (^)(SAPIResult * result))successBlock
+                         failure:(void (^)(SAPIError * error))failureBlock;
 
 @end

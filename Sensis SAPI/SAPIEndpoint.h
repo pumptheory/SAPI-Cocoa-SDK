@@ -9,7 +9,15 @@
 #import <Foundation/Foundation.h>
 
 #import "SAPI.h"
+#import "SAPIResult.h"
+#import "SAPIError.h"
 
 @interface SAPIEndpoint : NSObject
+
+- (NSString *)endpoint;
+- (NSURL *)requestURL;
+- (NSString *)baseURLString;
+- (NSArray *)queryKeys;
+- (NSString *)queryString;
 
 @end
