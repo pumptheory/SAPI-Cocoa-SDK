@@ -1,0 +1,499 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		64493DDC15197ED800A64AA6 /* SAPIError.m in Sources */ = {isa = PBXBuildFile; fileRef = 64493DDB15197ED800A64AA6 /* SAPIError.m */; };
+		64493DE31519843A00A64AA6 /* SAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 64493DE21519843A00A64AA6 /* SAPI.m */; };
+		64493DE6151985E100A64AA6 /* SAPIEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 64493DE5151985E100A64AA6 /* SAPIEndpoint.m */; };
+		64493DE9151985F900A64AA6 /* SAPISearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 64493DE8151985F900A64AA6 /* SAPISearch.m */; };
+		64493DEC1519871400A64AA6 /* SAPIResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 64493DEB1519871400A64AA6 /* SAPIResult.m */; };
+		64493DEF1519872500A64AA6 /* SAPISearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 64493DEE1519872500A64AA6 /* SAPISearchResult.m */; };
+		64AB066B151977F0009C66A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AB066A151977F0009C66A8 /* UIKit.framework */; };
+		64AB066D151977F0009C66A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AB066C151977F0009C66A8 /* Foundation.framework */; };
+		64AB066F151977F0009C66A8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AB066E151977F0009C66A8 /* CoreGraphics.framework */; };
+		64AB0675151977F0009C66A8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64AB0673151977F0009C66A8 /* InfoPlist.strings */; };
+		64AB0677151977F0009C66A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AB0676151977F0009C66A8 /* main.m */; };
+		64AB067B151977F0009C66A8 /* SAPIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AB067A151977F0009C66A8 /* SAPIAppDelegate.m */; };
+		64AB067E151977F0009C66A8 /* SAPIMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AB067D151977F0009C66A8 /* SAPIMasterViewController.m */; };
+		64AB0684151977F0009C66A8 /* SAPIMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64AB0682151977F0009C66A8 /* SAPIMasterViewController.xib */; };
+		64AB068F151977F0009C66A8 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AB068E151977F0009C66A8 /* SenTestingKit.framework */; };
+		64AB0690151977F0009C66A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AB066A151977F0009C66A8 /* UIKit.framework */; };
+		64AB0691151977F0009C66A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AB066C151977F0009C66A8 /* Foundation.framework */; };
+		64AB0699151977F0009C66A8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64AB0697151977F0009C66A8 /* InfoPlist.strings */; };
+		64AB069C151977F0009C66A8 /* Sensis_SAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AB069B151977F0009C66A8 /* Sensis_SAPITests.m */; };
+		64AB06AE15197B33009C66A8 /* SAPISearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AB06AC15197B33009C66A8 /* SAPISearchViewController.m */; };
+		64AB06AF15197B33009C66A8 /* SAPISearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64AB06AD15197B33009C66A8 /* SAPISearchViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		64AB0692151977F0009C66A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64AB065D151977F0009C66A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64AB0665151977F0009C66A8;
+			remoteInfo = "Sensis SAPI";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		64493DDA15197ED800A64AA6 /* SAPIError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAPIError.h; path = "Sensis SAPI/SAPIError.h"; sourceTree = "<group>"; };
+		64493DDB15197ED800A64AA6 /* SAPIError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAPIError.m; path = "Sensis SAPI/SAPIError.m"; sourceTree = "<group>"; };
+		64493DE11519843A00A64AA6 /* SAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAPI.h; path = "Sensis SAPI/SAPI.h"; sourceTree = "<group>"; };
+		64493DE21519843A00A64AA6 /* SAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAPI.m; path = "Sensis SAPI/SAPI.m"; sourceTree = "<group>"; };
+		64493DE4151985E100A64AA6 /* SAPIEndpoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAPIEndpoint.h; path = "Sensis SAPI/SAPIEndpoint.h"; sourceTree = "<group>"; };
+		64493DE5151985E100A64AA6 /* SAPIEndpoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAPIEndpoint.m; path = "Sensis SAPI/SAPIEndpoint.m"; sourceTree = "<group>"; };
+		64493DE7151985F900A64AA6 /* SAPISearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAPISearch.h; path = "Sensis SAPI/SAPISearch.h"; sourceTree = "<group>"; };
+		64493DE8151985F900A64AA6 /* SAPISearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAPISearch.m; path = "Sensis SAPI/SAPISearch.m"; sourceTree = "<group>"; };
+		64493DEA1519871400A64AA6 /* SAPIResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAPIResult.h; path = "Sensis SAPI/SAPIResult.h"; sourceTree = "<group>"; };
+		64493DEB1519871400A64AA6 /* SAPIResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAPIResult.m; path = "Sensis SAPI/SAPIResult.m"; sourceTree = "<group>"; };
+		64493DED1519872500A64AA6 /* SAPISearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAPISearchResult.h; path = "Sensis SAPI/SAPISearchResult.h"; sourceTree = "<group>"; };
+		64493DEE1519872500A64AA6 /* SAPISearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAPISearchResult.m; path = "Sensis SAPI/SAPISearchResult.m"; sourceTree = "<group>"; };
+		64AB0666151977F0009C66A8 /* Sensis SAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sensis SAPI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		64AB066A151977F0009C66A8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		64AB066C151977F0009C66A8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		64AB066E151977F0009C66A8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		64AB0672151977F0009C66A8 /* Sensis SAPI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sensis SAPI-Info.plist"; sourceTree = "<group>"; };
+		64AB0674151977F0009C66A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		64AB0676151977F0009C66A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		64AB0678151977F0009C66A8 /* Sensis SAPI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sensis SAPI-Prefix.pch"; sourceTree = "<group>"; };
+		64AB0679151977F0009C66A8 /* SAPIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAPIAppDelegate.h; sourceTree = "<group>"; };
+		64AB067A151977F0009C66A8 /* SAPIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAPIAppDelegate.m; sourceTree = "<group>"; };
+		64AB067C151977F0009C66A8 /* SAPIMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAPIMasterViewController.h; sourceTree = "<group>"; };
+		64AB067D151977F0009C66A8 /* SAPIMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAPIMasterViewController.m; sourceTree = "<group>"; };
+		64AB0683151977F0009C66A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SAPIMasterViewController.xib; sourceTree = "<group>"; };
+		64AB068D151977F0009C66A8 /* Sensis SAPITests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sensis SAPITests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		64AB068E151977F0009C66A8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		64AB0696151977F0009C66A8 /* Sensis SAPITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sensis SAPITests-Info.plist"; sourceTree = "<group>"; };
+		64AB0698151977F0009C66A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		64AB069A151977F0009C66A8 /* Sensis_SAPITests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sensis_SAPITests.h; sourceTree = "<group>"; };
+		64AB069B151977F0009C66A8 /* Sensis_SAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sensis_SAPITests.m; sourceTree = "<group>"; };
+		64AB06AB15197B33009C66A8 /* SAPISearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPISearchViewController.h; sourceTree = "<group>"; };
+		64AB06AC15197B33009C66A8 /* SAPISearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPISearchViewController.m; sourceTree = "<group>"; };
+		64AB06AD15197B33009C66A8 /* SAPISearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAPISearchViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		64AB0663151977F0009C66A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64AB066B151977F0009C66A8 /* UIKit.framework in Frameworks */,
+				64AB066D151977F0009C66A8 /* Foundation.framework in Frameworks */,
+				64AB066F151977F0009C66A8 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64AB0689151977F0009C66A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64AB068F151977F0009C66A8 /* SenTestingKit.framework in Frameworks */,
+				64AB0690151977F0009C66A8 /* UIKit.framework in Frameworks */,
+				64AB0691151977F0009C66A8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		64AB065B151977F0009C66A8 = {
+			isa = PBXGroup;
+			children = (
+				64AB06A515197804009C66A8 /* Sensis SAPI */,
+				64AB0670151977F0009C66A8 /* Test iPhone App */,
+				64AB0694151977F0009C66A8 /* Sensis SAPITests */,
+				64AB0669151977F0009C66A8 /* Frameworks */,
+				64AB0667151977F0009C66A8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		64AB0667151977F0009C66A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64AB0666151977F0009C66A8 /* Sensis SAPI.app */,
+				64AB068D151977F0009C66A8 /* Sensis SAPITests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		64AB0669151977F0009C66A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64AB066A151977F0009C66A8 /* UIKit.framework */,
+				64AB066C151977F0009C66A8 /* Foundation.framework */,
+				64AB066E151977F0009C66A8 /* CoreGraphics.framework */,
+				64AB068E151977F0009C66A8 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		64AB0670151977F0009C66A8 /* Test iPhone App */ = {
+			isa = PBXGroup;
+			children = (
+				64AB0679151977F0009C66A8 /* SAPIAppDelegate.h */,
+				64AB067A151977F0009C66A8 /* SAPIAppDelegate.m */,
+				64AB067C151977F0009C66A8 /* SAPIMasterViewController.h */,
+				64AB067D151977F0009C66A8 /* SAPIMasterViewController.m */,
+				64AB0682151977F0009C66A8 /* SAPIMasterViewController.xib */,
+				64AB0671151977F0009C66A8 /* Supporting Files */,
+				64AB06AB15197B33009C66A8 /* SAPISearchViewController.h */,
+				64AB06AC15197B33009C66A8 /* SAPISearchViewController.m */,
+				64AB06AD15197B33009C66A8 /* SAPISearchViewController.xib */,
+			);
+			path = "Test iPhone App";
+			sourceTree = "<group>";
+		};
+		64AB0671151977F0009C66A8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				64AB0672151977F0009C66A8 /* Sensis SAPI-Info.plist */,
+				64AB0673151977F0009C66A8 /* InfoPlist.strings */,
+				64AB0676151977F0009C66A8 /* main.m */,
+				64AB0678151977F0009C66A8 /* Sensis SAPI-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		64AB0694151977F0009C66A8 /* Sensis SAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				64AB069A151977F0009C66A8 /* Sensis_SAPITests.h */,
+				64AB069B151977F0009C66A8 /* Sensis_SAPITests.m */,
+				64AB0695151977F0009C66A8 /* Supporting Files */,
+			);
+			path = "Sensis SAPITests";
+			sourceTree = "<group>";
+		};
+		64AB0695151977F0009C66A8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				64AB0696151977F0009C66A8 /* Sensis SAPITests-Info.plist */,
+				64AB0697151977F0009C66A8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		64AB06A515197804009C66A8 /* Sensis SAPI */ = {
+			isa = PBXGroup;
+			children = (
+				64493DE11519843A00A64AA6 /* SAPI.h */,
+				64493DE21519843A00A64AA6 /* SAPI.m */,
+				64493DE7151985F900A64AA6 /* SAPISearch.h */,
+				64493DE8151985F900A64AA6 /* SAPISearch.m */,
+				64493DDA15197ED800A64AA6 /* SAPIError.h */,
+				64493DDB15197ED800A64AA6 /* SAPIError.m */,
+				64493DE4151985E100A64AA6 /* SAPIEndpoint.h */,
+				64493DE5151985E100A64AA6 /* SAPIEndpoint.m */,
+				64493DEA1519871400A64AA6 /* SAPIResult.h */,
+				64493DEB1519871400A64AA6 /* SAPIResult.m */,
+				64493DED1519872500A64AA6 /* SAPISearchResult.h */,
+				64493DEE1519872500A64AA6 /* SAPISearchResult.m */,
+			);
+			name = "Sensis SAPI";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		64AB0665151977F0009C66A8 /* Sensis SAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64AB069F151977F0009C66A8 /* Build configuration list for PBXNativeTarget "Sensis SAPI" */;
+			buildPhases = (
+				64AB0662151977F0009C66A8 /* Sources */,
+				64AB0663151977F0009C66A8 /* Frameworks */,
+				64AB0664151977F0009C66A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sensis SAPI";
+			productName = "Sensis SAPI";
+			productReference = 64AB0666151977F0009C66A8 /* Sensis SAPI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		64AB068C151977F0009C66A8 /* Sensis SAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64AB06A2151977F0009C66A8 /* Build configuration list for PBXNativeTarget "Sensis SAPITests" */;
+			buildPhases = (
+				64AB0688151977F0009C66A8 /* Sources */,
+				64AB0689151977F0009C66A8 /* Frameworks */,
+				64AB068A151977F0009C66A8 /* Resources */,
+				64AB068B151977F0009C66A8 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				64AB0693151977F0009C66A8 /* PBXTargetDependency */,
+			);
+			name = "Sensis SAPITests";
+			productName = "Sensis SAPITests";
+			productReference = 64AB068D151977F0009C66A8 /* Sensis SAPITests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		64AB065D151977F0009C66A8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Pumptheory Pty Ltd";
+			};
+			buildConfigurationList = 64AB0660151977F0009C66A8 /* Build configuration list for PBXProject "Sensis SAPI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 64AB065B151977F0009C66A8;
+			productRefGroup = 64AB0667151977F0009C66A8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				64AB0665151977F0009C66A8 /* Sensis SAPI */,
+				64AB068C151977F0009C66A8 /* Sensis SAPITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		64AB0664151977F0009C66A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64AB0675151977F0009C66A8 /* InfoPlist.strings in Resources */,
+				64AB0684151977F0009C66A8 /* SAPIMasterViewController.xib in Resources */,
+				64AB06AF15197B33009C66A8 /* SAPISearchViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64AB068A151977F0009C66A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64AB0699151977F0009C66A8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		64AB068B151977F0009C66A8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		64AB0662151977F0009C66A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64AB0677151977F0009C66A8 /* main.m in Sources */,
+				64AB067B151977F0009C66A8 /* SAPIAppDelegate.m in Sources */,
+				64AB067E151977F0009C66A8 /* SAPIMasterViewController.m in Sources */,
+				64AB06AE15197B33009C66A8 /* SAPISearchViewController.m in Sources */,
+				64493DDC15197ED800A64AA6 /* SAPIError.m in Sources */,
+				64493DE31519843A00A64AA6 /* SAPI.m in Sources */,
+				64493DE6151985E100A64AA6 /* SAPIEndpoint.m in Sources */,
+				64493DE9151985F900A64AA6 /* SAPISearch.m in Sources */,
+				64493DEC1519871400A64AA6 /* SAPIResult.m in Sources */,
+				64493DEF1519872500A64AA6 /* SAPISearchResult.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64AB0688151977F0009C66A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64AB069C151977F0009C66A8 /* Sensis_SAPITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		64AB0693151977F0009C66A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64AB0665151977F0009C66A8 /* Sensis SAPI */;
+			targetProxy = 64AB0692151977F0009C66A8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		64AB0673151977F0009C66A8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64AB0674151977F0009C66A8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		64AB0682151977F0009C66A8 /* SAPIMasterViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64AB0683151977F0009C66A8 /* en */,
+			);
+			name = SAPIMasterViewController.xib;
+			sourceTree = "<group>";
+		};
+		64AB0697151977F0009C66A8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64AB0698151977F0009C66A8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		64AB069D151977F0009C66A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		64AB069E151977F0009C66A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		64AB06A0151977F0009C66A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Test iPhone App/Sensis SAPI-Prefix.pch";
+				INFOPLIST_FILE = "Test iPhone App/Sensis SAPI-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		64AB06A1151977F0009C66A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Test iPhone App/Sensis SAPI-Prefix.pch";
+				INFOPLIST_FILE = "Test iPhone App/Sensis SAPI-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		64AB06A3151977F0009C66A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sensis SAPI.app/Sensis SAPI";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sensis SAPI/Sensis SAPI-Prefix.pch";
+				INFOPLIST_FILE = "Sensis SAPITests/Sensis SAPITests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		64AB06A4151977F0009C66A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sensis SAPI.app/Sensis SAPI";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sensis SAPI/Sensis SAPI-Prefix.pch";
+				INFOPLIST_FILE = "Sensis SAPITests/Sensis SAPITests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		64AB0660151977F0009C66A8 /* Build configuration list for PBXProject "Sensis SAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64AB069D151977F0009C66A8 /* Debug */,
+				64AB069E151977F0009C66A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64AB069F151977F0009C66A8 /* Build configuration list for PBXNativeTarget "Sensis SAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64AB06A0151977F0009C66A8 /* Debug */,
+				64AB06A1151977F0009C66A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64AB06A2151977F0009C66A8 /* Build configuration list for PBXNativeTarget "Sensis SAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64AB06A3151977F0009C66A8 /* Debug */,
+				64AB06A4151977F0009C66A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 64AB065D151977F0009C66A8 /* Project object */;
+}
