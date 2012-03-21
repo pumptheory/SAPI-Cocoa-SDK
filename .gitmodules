@@ -1,0 +1,3 @@
+[submodule "Test iPhone App/Externals/AFNetworking"]
+	path = Test iPhone App/Externals/AFNetworking
+	url = https://github.com/AFNetworking/AFNetworking.git
