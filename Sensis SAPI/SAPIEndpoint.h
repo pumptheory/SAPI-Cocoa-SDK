@@ -14,12 +14,6 @@
 
 @interface SAPIEndpoint : NSObject
 
-- (NSString *)endpoint;
-- (NSURL *)requestURL;
-- (NSString *)baseURLString;
-- (NSArray *)queryKeys;
-- (NSString *)queryString;
-
 - (SAPIResult *)performQueryWithError:(SAPIError **)error;
 
 - (void)performQueryAsyncSuccess:(void (^)(SAPIResult * result))successBlock

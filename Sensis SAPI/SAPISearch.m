@@ -11,13 +11,34 @@
 
 @implementation SAPISearch
 
-@synthesize query=_query;
-@synthesize location=_location;
+@synthesize query;
+@synthesize location;
+@synthesize page;
+@synthesize rows;
+@synthesize sortBy;
+@synthesize sensitiveCategories;
+@synthesize categoryIdArray;
+@synthesize postcodeArray;
+@synthesize radius;
+@synthesize locationTiers;
+@synthesize suburbArray;
+@synthesize stateArray;
+@synthesize boundingBox;
+@synthesize contentArray;
+@synthesize productKeywordArray;
 
 - (void)dealloc
 {
-    [_query release], _query = nil;
-    [_location release], _location = nil;
+    [query release];
+    [location release];
+    [sortBy release];
+    [categoryIdArray release];
+    [postcodeArray release];
+    [suburbArray release];
+    [stateArray release];
+    [boundingBox release];
+    [contentArray release];
+    [productKeywordArray release];
     
     [super dealloc];
 }
@@ -27,12 +48,45 @@
     return @"search";
 }
 
-- (NSArray *)queryKeys
+- (NSDictionary *)queryKeys
 {
-    return [NSArray arrayWithObjects:
-            @"query",
-            @"location", 
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+            @"query", @"query",
+            @"location", @"location",
+            @"page", @"page",
+            @"rows", @"rows",
+            @"sortBy", @"sortBy",
+            @"sensitiveCategories", @"sensitiveCategories",
+            @"radius", @"radius",
+            @"locationTiers", @"locationTiers",
+            @"boundingBox", @"boundingBox",
+            
+            @"categoryId", @"categoryIdArray",
+            @"postcode", @"postcodeArray",
+            @"suburb", @"suburbArray",
+            @"state", @"stateArray",
+            @"content", @"contentArray",
+            @"productKeyword", @"productKeywordArray",
+
             nil];
+}
+
+- (id)queryValueForKey:(NSString *)key
+{
+    // omit unset scalar values from query string
+    
+    if ([key isEqualToString:@"radius"] && self.radius == 0)
+        return nil;
+    else if ([key isEqualToString:@"page"] && self.page == 0)
+        return nil;
+    else if ([key isEqualToString:@"rows"] && self.rows == 0)
+        return nil;
+    else if ([key isEqualToString:@"sensitiveCategories"] && self.sensitiveCategories == NO)
+        return nil;
+    else if ([key isEqualToString:@"locationTiers"] && self.locationTiers == 0)
+        return nil;
+    
+    return [super queryValueForKey:key];
 }
 
 @end

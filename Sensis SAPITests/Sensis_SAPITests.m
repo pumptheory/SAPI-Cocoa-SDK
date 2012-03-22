@@ -32,7 +32,9 @@
     [super tearDown];
 }
 
-- (void)testSearch
+NSUInteger appleResultCount = 0;
+
+- (void)testASearch
 { 
     SAPISearch * searchQuery = [[SAPISearch alloc] init];
     searchQuery.query = @"Apple";
@@ -42,6 +44,40 @@
     STAssertNotNil(res, [NSString stringWithFormat:@"Simple Search query returned no results (%@)", error]);
     STAssertTrue([res.results isKindOfClass:[NSArray class]], @"Returned results are not NSArray");
     STAssertFalse([res.results count] == 0, @"We expect a search query of 'Apple' to have > 0 results");
+    
+    appleResultCount = res.totalResults;
+}
+
+- (void)testBSearchStateFilter
+{
+    SAPISearch * searchQuery = [[SAPISearch alloc] init];
+    searchQuery.query = @"Apple";
+    searchQuery.stateArray = [NSArray arrayWithObject:@"NSW"];
+    SAPIError * error = nil;
+    SAPIResult * res = [searchQuery performQueryWithError:&error];
+    
+    STAssertNotNil(res, [NSString stringWithFormat:@"Simple Search query returned no results (%@)", error]);
+    STAssertTrue([res.results isKindOfClass:[NSArray class]], @"Returned results are not NSArray");
+    STAssertFalse([res.results count] == 0, @"We expect a search query of 'Apple' to have > 0 results");
+
+    STAssertTrue(res.totalResults < appleResultCount, @"doing the same search with a state filter should have fewer results");
+    
+    appleResultCount = res.totalResults;
+}
+
+- (void)testCSearchMultipleStateFilter
+{
+    SAPISearch * searchQuery = [[SAPISearch alloc] init];
+    searchQuery.query = @"Apple";
+    searchQuery.stateArray = [NSArray arrayWithObjects:@"NSW", @"VIC", nil];
+    SAPIError * error = nil;
+    SAPIResult * res = [searchQuery performQueryWithError:&error];
+    
+    STAssertNotNil(res, [NSString stringWithFormat:@"Simple Search query returned no results (%@)", error]);
+    STAssertTrue([res.results isKindOfClass:[NSArray class]], @"Returned results are not NSArray");
+    STAssertFalse([res.results count] == 0, @"We expect a search query of 'Apple' to have > 0 results");
+    
+    STAssertTrue(res.totalResults > appleResultCount, @"doing the same search with a multiple state filter should have more results than with one state");
 }
 
 - (void)testValidationError

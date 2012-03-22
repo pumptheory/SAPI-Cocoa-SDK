@@ -15,5 +15,11 @@ extern const NSInteger SAPIResultValidationError;
 @property (retain) AFJSONRequestOperation * requestOperation;
 
 - (void)setupRequestForQueryAsyncSuccess:(void (^)(SAPIResult *))successBlock failure:(void (^)(SAPIError *))failureBlock;
+- (NSString *)endpoint;
+- (NSURL *)requestURL;
+- (NSString *)baseURLString;
+- (NSDictionary *)queryKeys;
+- (NSString *)queryString;
+- (id)queryValueForKey:(NSString *)key;
 
 @end

@@ -62,22 +62,34 @@
 
 - (NSString *)queryString
 {
-    NSArray * keys = [self queryKeys];
+    NSMutableArray * queryParams = [NSMutableArray arrayWithCapacity:40];
     
-    NSMutableDictionary * queryDict = [NSMutableDictionary dictionaryWithCapacity:[keys count]];
+    [queryParams addObject:[NSString stringWithFormat:@"key=%@", [SAPI key]]];
     
-    [queryDict setObject:[SAPI key] forKey:@"key"];
-    
-    for (NSString * key in keys)
-    {
-        id val = [self valueForKey:key];
+    [self.queryKeys enumerateKeysAndObjectsUsingBlock:^(id propertyKey, id queryParamName, BOOL *stop) {
+
+        id val = [self queryValueForKey:propertyKey];
         if (val)
         {
-            [queryDict setObject:val forKey:key];
+            if ([val isKindOfClass:[NSArray class]])
+            {
+                for (id multipleVal in val)
+                {
+                    [queryParams addObject:[NSString stringWithFormat:@"%@=%@",
+                                            AFURLEncodedStringFromStringWithEncoding(queryParamName, NSUTF8StringEncoding),
+                                            AFURLEncodedStringFromStringWithEncoding([multipleVal description], NSUTF8StringEncoding)]];
+                }
+            }
+            else
+            {
+                [queryParams addObject:[NSString stringWithFormat:@"%@=%@",
+                                        AFURLEncodedStringFromStringWithEncoding(queryParamName, NSUTF8StringEncoding),
+                                        AFURLEncodedStringFromStringWithEncoding([val description], NSUTF8StringEncoding)]];
+            }
         }
-    }
-
-    return AFQueryStringFromParametersWithEncoding(queryDict, NSUTF8StringEncoding);
+    }];
+    
+    return [queryParams componentsJoinedByString:@"&"];
 }
 
 - (NSURL *)requestURL
@@ -87,6 +99,11 @@
                                    [self queryString]];
 
     return [NSURL URLWithString:requestURLString];
+}
+
+- (id)queryValueForKey:(NSString *)key
+{
+    return [self valueForKey:key];
 }
 
 #define SAPIQueryInitialCondition 0
