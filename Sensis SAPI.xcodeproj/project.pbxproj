@@ -42,7 +42,7 @@
 		64AB0690151977F0009C66A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AB066A151977F0009C66A8 /* UIKit.framework */; };
 		64AB0691151977F0009C66A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AB066C151977F0009C66A8 /* Foundation.framework */; };
 		64AB0699151977F0009C66A8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64AB0697151977F0009C66A8 /* InfoPlist.strings */; };
-		64AB069C151977F0009C66A8 /* Sensis_SAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AB069B151977F0009C66A8 /* Sensis_SAPITests.m */; };
+		64AB069C151977F0009C66A8 /* Sensis_SAPI_SearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AB069B151977F0009C66A8 /* Sensis_SAPI_SearchTests.m */; };
 		64AB06AE15197B33009C66A8 /* SAPISearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AB06AC15197B33009C66A8 /* SAPISearchViewController.m */; };
 		64AB06AF15197B33009C66A8 /* SAPISearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64AB06AD15197B33009C66A8 /* SAPISearchViewController.xib */; };
 /* End PBXBuildFile section */
@@ -117,8 +117,8 @@
 		64AB068E151977F0009C66A8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		64AB0696151977F0009C66A8 /* Sensis SAPITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sensis SAPITests-Info.plist"; sourceTree = "<group>"; };
 		64AB0698151977F0009C66A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		64AB069A151977F0009C66A8 /* Sensis_SAPITests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sensis_SAPITests.h; sourceTree = "<group>"; };
-		64AB069B151977F0009C66A8 /* Sensis_SAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sensis_SAPITests.m; sourceTree = "<group>"; };
+		64AB069A151977F0009C66A8 /* Sensis_SAPI_SearchTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sensis_SAPI_SearchTests.h; sourceTree = "<group>"; };
+		64AB069B151977F0009C66A8 /* Sensis_SAPI_SearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sensis_SAPI_SearchTests.m; sourceTree = "<group>"; };
 		64AB06AB15197B33009C66A8 /* SAPISearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPISearchViewController.h; sourceTree = "<group>"; };
 		64AB06AC15197B33009C66A8 /* SAPISearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPISearchViewController.m; sourceTree = "<group>"; };
 		64AB06AD15197B33009C66A8 /* SAPISearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAPISearchViewController.xib; sourceTree = "<group>"; };
@@ -268,8 +268,8 @@
 		64AB0694151977F0009C66A8 /* Sensis SAPITests */ = {
 			isa = PBXGroup;
 			children = (
-				64AB069A151977F0009C66A8 /* Sensis_SAPITests.h */,
-				64AB069B151977F0009C66A8 /* Sensis_SAPITests.m */,
+				64AB069A151977F0009C66A8 /* Sensis_SAPI_SearchTests.h */,
+				64AB069B151977F0009C66A8 /* Sensis_SAPI_SearchTests.m */,
 				64AB0695151977F0009C66A8 /* Supporting Files */,
 			);
 			path = "Sensis SAPITests";
@@ -447,7 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64AB069C151977F0009C66A8 /* Sensis_SAPITests.m in Sources */,
+				64AB069C151977F0009C66A8 /* Sensis_SAPI_SearchTests.m in Sources */,
 				64A70DB7151AE076005859E4 /* SAPIISO8601DateFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

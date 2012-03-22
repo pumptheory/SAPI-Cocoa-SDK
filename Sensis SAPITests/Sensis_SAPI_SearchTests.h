@@ -8,6 +8,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface Sensis_SAPITests : SenTestCase
+@interface Sensis_SAPI_SearchTests : SenTestCase
 
 @end

@@ -6,13 +6,13 @@
 //  Copyright (c) 2012 Pumptheory Pty Ltd. All rights reserved.
 //
 
-#import "Sensis_SAPITests.h"
+#import "Sensis_SAPI_SearchTests.h"
 
 #import "SAPI.h"
 #import "SAPIAccountKey.h"
 #import "SAPISearch.h"
 
-@implementation Sensis_SAPITests
+@implementation Sensis_SAPI_SearchTests
 
 - (void)setUp
 {
