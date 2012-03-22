@@ -86,28 +86,48 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    if (section == 0)
+        return [self.searchResult.results count]; // in a real app you would want to auto-load the following result pages
+    else
+        return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"ListingCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    // Configure the cell...
+    if (indexPath.section == 0)
+    {
+        NSDictionary * listingDetail = [self.searchResult.results objectAtIndex:indexPath.row];
+        NSDictionary * addressDetail = [listingDetail objectForKey:@"primaryAddress"];
+        
+        cell.textLabel.text = [listingDetail objectForKey:@"name"];
+        cell.detailTextLabel.text = [addressDetail objectForKey:@"suburb"];
+    }
+    else
+    {
+        cell.textLabel.text = [NSString stringWithFormat:@"%d of %d total results", self.searchResult.count, self.searchResult.totalResults];
+        
+        if (self.searchResult.code == SAPIResultQueryModified)
+        {
+            cell.detailTextLabel.text = @"Query string was modified by Spell Checker";
+        }
+        else
+        {
+            NSArray * details = self.searchResult.details;
+            cell.detailTextLabel.text = details ? [details objectAtIndex:0] : @"";
+        }
+    }
     
     return cell;
 }

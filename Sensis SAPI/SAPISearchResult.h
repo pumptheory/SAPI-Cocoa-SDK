@@ -12,6 +12,7 @@
 
 @property (retain) NSArray * results; // This is currently an array of NSDictionaries.
 // In the future it will become an array of custom objects (which will respond to "objectForKey:" to maintain compatibility)
+// See http://developers.sensis.com.au/docs/reference/Listing_Schema for the structure of this dictionary
 
 @property NSUInteger count;
 @property NSUInteger totalResults;
