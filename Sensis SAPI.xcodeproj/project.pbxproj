@@ -30,6 +30,8 @@
 		645EFD3D151B20E800D50EDE /* SAPIGetByListingId.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EFD3C151B20E800D50EDE /* SAPIGetByListingId.m */; };
 		645EFD45151B271800D50EDE /* SAPIListingResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EFD44151B271800D50EDE /* SAPIListingResult.m */; };
 		645EFD4B151B28D800D50EDE /* SAPISearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EFD4A151B28D800D50EDE /* SAPISearchResult.m */; };
+		645EFD4E151B2DBB00D50EDE /* SAPIMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EFD4D151B2DBB00D50EDE /* SAPIMetadata.m */; };
+		645EFD52151B2E0500D50EDE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 645EFD51151B2E0500D50EDE /* README.md */; };
 		64A70DB0151ADF34005859E4 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 64A70DAF151ADF34005859E4 /* LICENSE */; };
 		64A70DB3151AE042005859E4 /* LICENSE_ISO8601DateFormatter in Resources */ = {isa = PBXBuildFile; fileRef = 64A70DB2151AE042005859E4 /* LICENSE_ISO8601DateFormatter */; };
 		64A70DB6151AE076005859E4 /* SAPIISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A70DB5151AE076005859E4 /* SAPIISO8601DateFormatter.m */; };
@@ -108,6 +110,9 @@
 		645EFD44151B271800D50EDE /* SAPIListingResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPIListingResult.m; sourceTree = "<group>"; };
 		645EFD49151B28D800D50EDE /* SAPISearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPISearchResult.h; sourceTree = "<group>"; };
 		645EFD4A151B28D800D50EDE /* SAPISearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPISearchResult.m; sourceTree = "<group>"; };
+		645EFD4C151B2DBB00D50EDE /* SAPIMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPIMetadata.h; sourceTree = "<group>"; };
+		645EFD4D151B2DBB00D50EDE /* SAPIMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPIMetadata.m; sourceTree = "<group>"; };
+		645EFD51151B2E0500D50EDE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		64A70DAF151ADF34005859E4 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		64A70DB2151AE042005859E4 /* LICENSE_ISO8601DateFormatter */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_ISO8601DateFormatter; sourceTree = "<group>"; };
 		64A70DB4151AE076005859E4 /* SAPIISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPIISO8601DateFormatter.h; sourceTree = "<group>"; };
@@ -217,9 +222,47 @@
 			path = JSONKit;
 			sourceTree = "<group>";
 		};
+		645EFD4F151B2DC100D50EDE /* Endoints */ = {
+			isa = PBXGroup;
+			children = (
+				645EFD4C151B2DBB00D50EDE /* SAPIMetadata.h */,
+				645EFD4D151B2DBB00D50EDE /* SAPIMetadata.m */,
+				64493DE7151985F900A64AA6 /* SAPISearch.h */,
+				64493DE8151985F900A64AA6 /* SAPISearch.m */,
+				645EFD3B151B20E800D50EDE /* SAPIGetByListingId.h */,
+				645EFD3C151B20E800D50EDE /* SAPIGetByListingId.m */,
+			);
+			name = Endoints;
+			sourceTree = "<group>";
+		};
+		645EFD50151B2DDB00D50EDE /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				64493DE11519843A00A64AA6 /* SAPI.h */,
+				64493DE21519843A00A64AA6 /* SAPI.m */,
+				64493DDA15197ED800A64AA6 /* SAPIError.h */,
+				64493DDB15197ED800A64AA6 /* SAPIError.m */,
+				64493DE4151985E100A64AA6 /* SAPIEndpoint.h */,
+				64493DE5151985E100A64AA6 /* SAPIEndpoint.m */,
+				64493DEA1519871400A64AA6 /* SAPIResult.h */,
+				64493DEB1519871400A64AA6 /* SAPIResult.m */,
+				645EFD49151B28D800D50EDE /* SAPISearchResult.h */,
+				645EFD4A151B28D800D50EDE /* SAPISearchResult.m */,
+				645EFD43151B271800D50EDE /* SAPIListingResult.h */,
+				645EFD44151B271800D50EDE /* SAPIListingResult.m */,
+				64494041151AAEDD00A64AA6 /* SAPIPrivate.h */,
+				64A70DB2151AE042005859E4 /* LICENSE_ISO8601DateFormatter */,
+				64A70DB4151AE076005859E4 /* SAPIISO8601DateFormatter.h */,
+				64A70DB5151AE076005859E4 /* SAPIISO8601DateFormatter.m */,
+			);
+			name = Implementation;
+			sourceTree = "<group>";
+		};
 		64AB065B151977F0009C66A8 = {
 			isa = PBXGroup;
 			children = (
+				645EFD51151B2E0500D50EDE /* README.md */,
+				64A70DAF151ADF34005859E4 /* LICENSE */,
 				64AB06A515197804009C66A8 /* Sensis SAPI */,
 				64AB0670151977F0009C66A8 /* Test iPhone App */,
 				64AB0694151977F0009C66A8 /* Sensis SAPITests */,
@@ -301,27 +344,8 @@
 		64AB06A515197804009C66A8 /* Sensis SAPI */ = {
 			isa = PBXGroup;
 			children = (
-				64A70DAF151ADF34005859E4 /* LICENSE */,
-				64493DE11519843A00A64AA6 /* SAPI.h */,
-				64493DE21519843A00A64AA6 /* SAPI.m */,
-				64493DE7151985F900A64AA6 /* SAPISearch.h */,
-				64493DE8151985F900A64AA6 /* SAPISearch.m */,
-				645EFD3B151B20E800D50EDE /* SAPIGetByListingId.h */,
-				645EFD3C151B20E800D50EDE /* SAPIGetByListingId.m */,
-				64493DDA15197ED800A64AA6 /* SAPIError.h */,
-				64493DDB15197ED800A64AA6 /* SAPIError.m */,
-				64493DE4151985E100A64AA6 /* SAPIEndpoint.h */,
-				64493DE5151985E100A64AA6 /* SAPIEndpoint.m */,
-				64493DEA1519871400A64AA6 /* SAPIResult.h */,
-				64493DEB1519871400A64AA6 /* SAPIResult.m */,
-				645EFD49151B28D800D50EDE /* SAPISearchResult.h */,
-				645EFD4A151B28D800D50EDE /* SAPISearchResult.m */,
-				645EFD43151B271800D50EDE /* SAPIListingResult.h */,
-				645EFD44151B271800D50EDE /* SAPIListingResult.m */,
-				64494041151AAEDD00A64AA6 /* SAPIPrivate.h */,
-				64A70DB2151AE042005859E4 /* LICENSE_ISO8601DateFormatter */,
-				64A70DB4151AE076005859E4 /* SAPIISO8601DateFormatter.h */,
-				64A70DB5151AE076005859E4 /* SAPIISO8601DateFormatter.m */,
+				645EFD4F151B2DC100D50EDE /* Endoints */,
+				645EFD50151B2DDB00D50EDE /* Implementation */,
 			);
 			path = "Sensis SAPI";
 			sourceTree = "<group>";
@@ -405,6 +429,7 @@
 				644940C6151AFAB200A64AA6 /* LICENSE in Resources */,
 				644940D3151AFAB200A64AA6 /* CHANGELOG.md in Resources */,
 				644940D5151AFAB200A64AA6 /* README.md in Resources */,
+				645EFD52151B2E0500D50EDE /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +488,7 @@
 				645EFD3D151B20E800D50EDE /* SAPIGetByListingId.m in Sources */,
 				645EFD45151B271800D50EDE /* SAPIListingResult.m in Sources */,
 				645EFD4B151B28D800D50EDE /* SAPISearchResult.m in Sources */,
+				645EFD4E151B2DBB00D50EDE /* SAPIMetadata.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
