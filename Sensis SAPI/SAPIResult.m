@@ -32,13 +32,19 @@ const NSInteger SAPIResultValidationError = 400;
          {
             if ([self respondsToSelector:NSSelectorFromString(key)])
             {
-                NSLog(@"key: %@", key);
                 [self setValue:obj forKey:key];
             }
         }];
     }
     
     return self;
+}
+
+- (void)dealloc
+{
+    [details release];
+    
+    [super dealloc];
 }
 
 - (void)setNilValueForKey:(NSString *)theKey

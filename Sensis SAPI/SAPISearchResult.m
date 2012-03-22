@@ -21,6 +21,15 @@
 @synthesize originalQuery;
 @synthesize date;
 
+- (void)dealloc
+{
+    [executedQuery release];
+    [originalQuery release];
+    [date release];
+
+    [super dealloc];
+}
+
 - (void)setValue:(id)value forKey:(NSString *)key
 {
     if ([key isEqualToString:@"date"] && [value isKindOfClass:[NSString class]])

@@ -21,4 +21,6 @@
 @property (retain) NSString * originalQuery;
 @property (retain) NSDate * date;
 
+// also time, code and possibly details -- defined in the baseclass SAPIResult
+
 @end
