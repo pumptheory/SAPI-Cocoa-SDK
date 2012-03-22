@@ -8,6 +8,7 @@
 
 #import "SAPIResult.h"
 #import "SAPIPrivate.h"
+#import "SAPIISO8601DateFormatter.h"
 
 const NSInteger SAPIResultSuccess = 200;
 const NSInteger SAPIResultQueryModified = 206;
@@ -53,6 +54,21 @@ const NSInteger SAPIResultValidationError = 400;
     // This general method wouldn't work if we had to deal with structs
     // as well as numberical scalars, but we don't for the time being.
     [self setValue:[NSNumber numberWithInt:0] forKey:theKey];
+}
+
+// both SearchResult and ReportResult have a date param, so including in the base class
+- (void)setValue:(id)value forKey:(NSString *)key
+{
+    if ([key isEqualToString:@"date"] && [value isKindOfClass:[NSString class]])
+    {
+        SAPIISO8601DateFormatter * formatter = [[SAPIISO8601DateFormatter alloc] init];
+        [self setValue:[formatter dateFromString:value] forKey:key];
+        [formatter release];
+    }
+    else
+    {
+        [super setValue:value forKey:key];
+    }
 }
 
 @end

@@ -8,8 +8,6 @@
 
 #import "SAPISearchResult.h"
 
-#import "SAPIISO8601DateFormatter.h"
-
 @implementation SAPISearchResult
 
 @synthesize results;
@@ -28,20 +26,6 @@
     [date release];
 
     [super dealloc];
-}
-
-- (void)setValue:(id)value forKey:(NSString *)key
-{
-    if ([key isEqualToString:@"date"] && [value isKindOfClass:[NSString class]])
-    {
-        SAPIISO8601DateFormatter * formatter = [[SAPIISO8601DateFormatter alloc] init];
-        self.date = [formatter dateFromString:value];
-        [formatter release];
-    }
-    else
-    {
-        [super setValue:value forKey:key];
-    }
 }
 
 @end

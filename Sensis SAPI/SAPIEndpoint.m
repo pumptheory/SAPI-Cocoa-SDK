@@ -242,6 +242,8 @@
                                  
                                  NSRange match;
                                  
+                                 //TODO: make use of the JSON message key if it's available
+                                 
                                  switch (statusCode)
                                  {
                                      case 400: // 400 is overloaded between json status return and http status code unfortunately

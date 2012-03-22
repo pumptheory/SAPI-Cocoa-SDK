@@ -29,6 +29,9 @@
 		645EFD4E151B2DBB00D50EDE /* SAPIMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EFD4D151B2DBB00D50EDE /* SAPIMetadata.m */; };
 		645EFD55151B2F4000D50EDE /* SAPIMetadataResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EFD54151B2F4000D50EDE /* SAPIMetadataResult.m */; };
 		645EFD59151B32CA00D50EDE /* Sensis_SAPI_MetadataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EFD57151B318A00D50EDE /* Sensis_SAPI_MetadataTests.m */; };
+		645EFD5C151B353000D50EDE /* SAPIReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EFD5B151B353000D50EDE /* SAPIReport.m */; };
+		645EFD5F151B354200D50EDE /* SAPIReportResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EFD5E151B354200D50EDE /* SAPIReportResult.m */; };
+		645EFD63151B3ABD00D50EDE /* Sensis_SAPI_ReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EFD61151B3A4F00D50EDE /* Sensis_SAPI_ReportTests.m */; };
 		64A70DB6151AE076005859E4 /* SAPIISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A70DB5151AE076005859E4 /* SAPIISO8601DateFormatter.m */; };
 		64A70DB7151AE076005859E4 /* SAPIISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A70DB5151AE076005859E4 /* SAPIISO8601DateFormatter.m */; };
 		64AB066B151977F0009C66A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AB066A151977F0009C66A8 /* UIKit.framework */; };
@@ -110,6 +113,12 @@
 		645EFD54151B2F4000D50EDE /* SAPIMetadataResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPIMetadataResult.m; sourceTree = "<group>"; };
 		645EFD56151B318A00D50EDE /* Sensis_SAPI_MetadataTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sensis_SAPI_MetadataTests.h; sourceTree = "<group>"; };
 		645EFD57151B318A00D50EDE /* Sensis_SAPI_MetadataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sensis_SAPI_MetadataTests.m; sourceTree = "<group>"; };
+		645EFD5A151B353000D50EDE /* SAPIReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPIReport.h; sourceTree = "<group>"; };
+		645EFD5B151B353000D50EDE /* SAPIReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPIReport.m; sourceTree = "<group>"; };
+		645EFD5D151B354200D50EDE /* SAPIReportResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPIReportResult.h; sourceTree = "<group>"; };
+		645EFD5E151B354200D50EDE /* SAPIReportResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPIReportResult.m; sourceTree = "<group>"; };
+		645EFD60151B3A4F00D50EDE /* Sensis_SAPI_ReportTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sensis_SAPI_ReportTests.h; sourceTree = "<group>"; };
+		645EFD61151B3A4F00D50EDE /* Sensis_SAPI_ReportTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sensis_SAPI_ReportTests.m; sourceTree = "<group>"; };
 		64A70DAF151ADF34005859E4 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		64A70DB2151AE042005859E4 /* LICENSE_ISO8601DateFormatter */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_ISO8601DateFormatter; sourceTree = "<group>"; };
 		64A70DB4151AE076005859E4 /* SAPIISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPIISO8601DateFormatter.h; sourceTree = "<group>"; };
@@ -228,6 +237,8 @@
 				645EFD3C151B20E800D50EDE /* SAPIGetByListingId.m */,
 				645EFD4C151B2DBB00D50EDE /* SAPIMetadata.h */,
 				645EFD4D151B2DBB00D50EDE /* SAPIMetadata.m */,
+				645EFD5A151B353000D50EDE /* SAPIReport.h */,
+				645EFD5B151B353000D50EDE /* SAPIReport.m */,
 			);
 			name = Endoints;
 			sourceTree = "<group>";
@@ -247,6 +258,8 @@
 				645EFD4A151B28D800D50EDE /* SAPISearchResult.m */,
 				645EFD53151B2F4000D50EDE /* SAPIMetadataResult.h */,
 				645EFD54151B2F4000D50EDE /* SAPIMetadataResult.m */,
+				645EFD5D151B354200D50EDE /* SAPIReportResult.h */,
+				645EFD5E151B354200D50EDE /* SAPIReportResult.m */,
 				64494041151AAEDD00A64AA6 /* SAPIPrivate.h */,
 				64A70DB2151AE042005859E4 /* LICENSE_ISO8601DateFormatter */,
 				64A70DB4151AE076005859E4 /* SAPIISO8601DateFormatter.h */,
@@ -326,6 +339,8 @@
 				645EFD38151B1F2F00D50EDE /* Sensis_SAPI_GetByListingIdTests.m */,
 				645EFD56151B318A00D50EDE /* Sensis_SAPI_MetadataTests.h */,
 				645EFD57151B318A00D50EDE /* Sensis_SAPI_MetadataTests.m */,
+				645EFD60151B3A4F00D50EDE /* Sensis_SAPI_ReportTests.h */,
+				645EFD61151B3A4F00D50EDE /* Sensis_SAPI_ReportTests.m */,
 				64AB0695151977F0009C66A8 /* Supporting Files */,
 			);
 			path = "Sensis SAPITests";
@@ -482,6 +497,8 @@
 				645EFD4B151B28D800D50EDE /* SAPISearchResult.m in Sources */,
 				645EFD4E151B2DBB00D50EDE /* SAPIMetadata.m in Sources */,
 				645EFD55151B2F4000D50EDE /* SAPIMetadataResult.m in Sources */,
+				645EFD5C151B353000D50EDE /* SAPIReport.m in Sources */,
+				645EFD5F151B354200D50EDE /* SAPIReportResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +510,7 @@
 				64A70DB7151AE076005859E4 /* SAPIISO8601DateFormatter.m in Sources */,
 				645EFD3A151B1F4900D50EDE /* Sensis_SAPI_GetByListingIdTests.m in Sources */,
 				645EFD59151B32CA00D50EDE /* Sensis_SAPI_MetadataTests.m in Sources */,
+				645EFD63151B3ABD00D50EDE /* Sensis_SAPI_ReportTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

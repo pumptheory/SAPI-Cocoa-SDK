@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 extern const NSInteger SAPIResultSuccess;
-extern const NSInteger SAPIResultQueryModified;
+extern const NSInteger SAPIResultQueryModified; // in the case of a search, this indicates spell checking was applied
+                                                // in the case of a SAPIReport this indicates some ids were invalid and were skipped
 
 @interface SAPIResult : NSObject
 
