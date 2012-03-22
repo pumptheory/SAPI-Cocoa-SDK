@@ -14,9 +14,4 @@
 
 @interface SAPIEndpoint : NSObject
 
-- (SAPIResult *)performQueryWithError:(SAPIError **)error;
-
-- (void)performQueryAsyncSuccess:(void (^)(SAPIResult * result))successBlock
-                         failure:(void (^)(SAPIError * error))failureBlock;
-
 @end

@@ -8,6 +8,8 @@
 
 #import "SAPIEndpoint.h"
 
+#import "SAPISearchResult.h"
+
 @interface SAPISearch : SAPIEndpoint
 
 // See also the endpoint reference for more detail: http://developers.sensis.com.au/docs/endpoint_reference/Search
@@ -28,6 +30,9 @@
 @property (retain) NSArray * contentArray;    // Filter results by content - NSArray of strings - see http://developers.sensis.com.au/docs/using_endpoints/Filtering_by_Content_Type
 @property (retain) NSArray * productKeywordArray; // Filter results by keyword - NSArray of strings - see http://developers.sensis.com.au/docs/using_endpoints/Filtering_by_Product_Keyword
 
-// The methods to perform the query are in the baseclass header, SAPIEndpoint.h
+- (SAPISearchResult *)performQueryWithError:(SAPIError **)error;
+
+- (void)performQueryAsyncSuccess:(void (^)(SAPISearchResult * result))successBlock
+                          failure:(void (^)(SAPIError * error))failureBlock;
 
 @end

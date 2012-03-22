@@ -28,6 +28,13 @@
     return nil;
 }
 
+- (Class)resultClass
+{
+    NSAssert(0, @"You can't use SAPIEndpoint directly, you must use one of its subclasses eg. SAPISearch");
+    
+    return nil;
+}
+
 - (NSString *)baseURLString;
 {
     return [NSString stringWithFormat:@"%@://%@/%@%@/%@",
@@ -110,7 +117,7 @@
 #define SAPIQueryWaitingCondition 1
 #define SAPIQueryFinishedCondition 2
 
-- (SAPIResult *)performQueryWithError:(SAPIError **)returnError
+- (SAPIResult *)_performQueryWithError:(SAPIError **)returnError
 {
     __block SAPIResult * returnResult = nil;
     NSConditionLock * lock = [[NSConditionLock alloc] initWithCondition:SAPIQueryInitialCondition];
@@ -151,8 +158,8 @@
     return [returnResult autorelease];
 }
 
-- (void)performQueryAsyncSuccess:(void (^)(SAPIResult * result))successBlock
-                         failure:(void (^)(SAPIError * error))failureBlock
+- (void)_performQueryAsyncSuccess:(void (^)(SAPIResult * result))successBlock
+                          failure:(void (^)(SAPIError * error))failureBlock
 {
     [self setupRequestForQueryAsyncSuccess:successBlock failure:failureBlock];
     [self.requestOperation start];
@@ -190,7 +197,7 @@
                                          if (jsonCode == SAPIResultSuccess || jsonCode == SAPIResultQueryModified)
                                          {
                                              ok = YES;
-                                             successBlock([SAPIResult resultWithJSONDictionary:JSON]);
+                                             successBlock([[self resultClass] resultWithJSONDictionary:JSON]);
                                          }
                                          else if (jsonCode == SAPIResultValidationError)
                                          {

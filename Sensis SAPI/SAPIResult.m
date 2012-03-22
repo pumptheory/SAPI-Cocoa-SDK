@@ -7,8 +7,7 @@
 //
 
 #import "SAPIResult.h"
-
-#import "SAPIISO8601DateFormatter.h"
+#import "SAPIPrivate.h"
 
 const NSInteger SAPIResultSuccess = 200;
 const NSInteger SAPIResultQueryModified = 206;
@@ -16,14 +15,6 @@ const NSInteger SAPIResultValidationError = 400;
 
 @implementation SAPIResult
 
-@synthesize results;
-@synthesize count;
-@synthesize totalResults;
-@synthesize currentPage;
-@synthesize totalPages;
-@synthesize executedQuery;
-@synthesize originalQuery;
-@synthesize date;
 @synthesize time;
 @synthesize code;
 @synthesize details;
@@ -39,14 +30,9 @@ const NSInteger SAPIResultValidationError = 400;
     {
         [jsonDictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
          {
-            if ([key isEqualToString:@"date"])
+            if ([self respondsToSelector:NSSelectorFromString(key)])
             {
-                SAPIISO8601DateFormatter * formatter = [[SAPIISO8601DateFormatter alloc] init];
-                self.date = [formatter dateFromString:obj];
-                [formatter release];
-            }
-            else if ([self respondsToSelector:NSSelectorFromString(key)])
-            {
+                NSLog(@"key: %@", key);
                 [self setValue:obj forKey:key];
             }
         }];

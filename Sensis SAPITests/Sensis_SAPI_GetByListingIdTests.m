@@ -37,7 +37,7 @@
 {
     SAPIGetByListingId * getByListingIdQuery = [[SAPIGetByListingId alloc] init];
     SAPIError * error = nil;
-    SAPIResult * res = [getByListingIdQuery performQueryWithError:&error];
+    SAPISearchResult * res = [getByListingIdQuery performQueryWithError:&error];
     
     STAssertNil(res, @"Invalid search returned a result");
     STAssertNotNil(error, @"Invalid search did not return an error");
@@ -52,7 +52,7 @@
     SAPIGetByListingId * getByListingIdQuery = [[SAPIGetByListingId alloc] init];
     getByListingIdQuery.businessId = @"0";
     SAPIError * error = nil;
-    SAPIResult * res = [getByListingIdQuery performQueryWithError:&error];
+    SAPISearchResult * res = [getByListingIdQuery performQueryWithError:&error];
     
     STAssertNotNil(res, [NSString stringWithFormat:@"Empty Listing Search query returned nil result (%@)", error]);
     STAssertTrue([res.results isKindOfClass:[NSArray class]], @"Returned results are not NSArray");
@@ -70,7 +70,7 @@ NSString * businessId = nil;
     SAPISearch * searchQuery = [[SAPISearch alloc] init];
     searchQuery.query = @"Apple";
     SAPIError * error = nil;
-    SAPIResult * res = [searchQuery performQueryWithError:&error];
+    SAPISearchResult * res = [searchQuery performQueryWithError:&error];
     
     STAssertNotNil(res, [NSString stringWithFormat:@"Simple Search query returned no results (%@)", error]);
     STAssertTrue([res.results isKindOfClass:[NSArray class]], @"Returned results are not NSArray");
@@ -90,7 +90,7 @@ NSString * businessId = nil;
     SAPIGetByListingId * getByListingIdQuery = [[SAPIGetByListingId alloc] init];
     getByListingIdQuery.businessId = businessId;
     SAPIError * error = nil;
-    SAPIResult * res = [getByListingIdQuery performQueryWithError:&error];
+    SAPISearchResult * res = [getByListingIdQuery performQueryWithError:&error];
     
     STAssertNotNil(res, [NSString stringWithFormat:@"Detail Listing Search query returned nil result (%@)", error]);
     STAssertTrue([res.results isKindOfClass:[NSArray class]], @"Returned results are not NSArray");
@@ -104,7 +104,7 @@ NSString * businessId = nil;
     SAPIGetByListingId * getByListingIdQuery = [[SAPIGetByListingId alloc] init];
     getByListingIdQuery.businessId = businessId;
     SAPIError * error = nil;
-    SAPIResult * res = [getByListingIdQuery performQueryWithError:&error];
+    SAPISearchResult * res = [getByListingIdQuery performQueryWithError:&error];
     
     STAssertNotNil(res, [NSString stringWithFormat:@"Detail Listing Search query returned nil result (%@)", error]);
     STAssertTrue([res.results isKindOfClass:[NSArray class]], @"Returned results are not NSArray");

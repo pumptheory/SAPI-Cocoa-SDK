@@ -48,6 +48,11 @@
     return @"search";
 }
 
+- (Class)resultClass
+{
+    return [SAPISearchResult class];
+}
+
 - (NSDictionary *)queryKeys
 {
     return [NSDictionary dictionaryWithObjectsAndKeys:
@@ -87,6 +92,17 @@
         return nil;
     
     return [super queryValueForKey:key];
+}
+
+- (SAPISearchResult *)performQueryWithError:(SAPIError **)error
+{
+    return (SAPISearchResult *)[self _performQueryWithError:error];
+}
+
+- (void)performQueryAsyncSuccess:(void (^)(SAPISearchResult * result))successBlock
+                         failure:(void (^)(SAPIError * error))failureBlock
+{
+    return [self _performQueryAsyncSuccess:(void (^)(SAPIResult * result))successBlock failure:failureBlock];
 }
 
 @end

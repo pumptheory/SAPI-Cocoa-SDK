@@ -39,7 +39,7 @@ NSUInteger appleResultCount = 0;
     SAPISearch * searchQuery = [[SAPISearch alloc] init];
     searchQuery.query = @"Apple";
     SAPIError * error = nil;
-    SAPIResult * res = [searchQuery performQueryWithError:&error];
+    SAPISearchResult * res = [searchQuery performQueryWithError:&error];
     
     STAssertNotNil(res, [NSString stringWithFormat:@"Simple Search query returned no results (%@)", error]);
     STAssertTrue([res.results isKindOfClass:[NSArray class]], @"Returned results are not NSArray");
@@ -56,7 +56,7 @@ NSUInteger appleResultCount = 0;
     searchQuery.query = @"Apple";
     searchQuery.stateArray = [NSArray arrayWithObject:@"NSW"];
     SAPIError * error = nil;
-    SAPIResult * res = [searchQuery performQueryWithError:&error];
+    SAPISearchResult * res = [searchQuery performQueryWithError:&error];
     
     STAssertNotNil(res, [NSString stringWithFormat:@"Simple Search query returned no results (%@)", error]);
     STAssertTrue([res.results isKindOfClass:[NSArray class]], @"Returned results are not NSArray");
@@ -75,7 +75,7 @@ NSUInteger appleResultCount = 0;
     searchQuery.query = @"Apple";
     searchQuery.stateArray = [NSArray arrayWithObjects:@"NSW", @"VIC", nil];
     SAPIError * error = nil;
-    SAPIResult * res = [searchQuery performQueryWithError:&error];
+    SAPISearchResult * res = [searchQuery performQueryWithError:&error];
     
     STAssertNotNil(res, [NSString stringWithFormat:@"Simple Search query returned no results (%@)", error]);
     STAssertTrue([res.results isKindOfClass:[NSArray class]], @"Returned results are not NSArray");
@@ -90,7 +90,7 @@ NSUInteger appleResultCount = 0;
 {
     SAPISearch * searchQuery = [[SAPISearch alloc] init];
     SAPIError * error = nil;
-    SAPIResult * res = [searchQuery performQueryWithError:&error];
+    SAPISearchResult * res = [searchQuery performQueryWithError:&error];
     
     STAssertNil(res, @"Invalid search returned a result");
     STAssertNotNil(error, @"Invalid search did not return an error");
@@ -106,7 +106,7 @@ NSUInteger appleResultCount = 0;
     SAPISearch * searchQuery = [[SAPISearch alloc] init];
     searchQuery.query = @"Apple";
     SAPIError * error = nil;
-    SAPIResult * res = [searchQuery performQueryWithError:&error];
+    SAPISearchResult * res = [searchQuery performQueryWithError:&error];
     
     STAssertNil(res, @"Bad permissions query returned a result");
     STAssertNotNil(error, @"Bad permissions query did not return an error");
@@ -122,7 +122,7 @@ NSUInteger appleResultCount = 0;
     SAPISearch * searchQuery = [[SAPISearch alloc] init];
     searchQuery.query = @"Apple";
     SAPIError * error = nil;
-    SAPIResult * res = [searchQuery performQueryWithError:&error];
+    SAPISearchResult * res = [searchQuery performQueryWithError:&error];
     
     STAssertNotNil(res, [NSString stringWithFormat:@"Simple Search query returned no results (%@)", error]);
     STAssertTrue([res.results isKindOfClass:[NSArray class]], @"Returned results are not NSArray");

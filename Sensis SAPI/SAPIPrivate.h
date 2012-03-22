@@ -8,6 +8,10 @@
 
 #import "AFJSONRequestOperation.h"
 
+#import "SAPIEndpoint.h"
+
+@class SAPIError;
+
 extern const NSInteger SAPIResultValidationError;
 
 @interface SAPIEndpoint ()
@@ -21,5 +25,18 @@ extern const NSInteger SAPIResultValidationError;
 - (NSDictionary *)queryKeys;
 - (NSString *)queryString;
 - (id)queryValueForKey:(NSString *)key;
+- (Class)resultClass;
+
+- (SAPIResult *)_performQueryWithError:(SAPIError **)error;
+
+- (void)_performQueryAsyncSuccess:(void (^)(SAPIResult * result))successBlock
+                          failure:(void (^)(SAPIError * error))failureBlock;
+
+@end
+
+@interface SAPIResult ()
+
++ (id)resultWithJSONDictionary:(NSDictionary *)jsonDictionary;
+- (id)initWithJSONDictionary:(NSDictionary *)jsonDictionary;
 
 @end
