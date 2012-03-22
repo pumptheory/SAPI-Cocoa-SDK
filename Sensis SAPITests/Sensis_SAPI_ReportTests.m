@@ -76,8 +76,7 @@
     SAPIReport * reportQuery = [[SAPIReport alloc] init];
     reportQuery.eventName = @"appearance";
     reportQuery.reportingIdArray = [NSArray arrayWithObject:reportingId];
-    reportQuery.userIp = @"10.0.0.1"; // You probably want to report the user's external IP.
-                                      // PortMapper might be a solution for you : http://developer.apple.com/library/mac/#samplecode/PortMapper
+    reportQuery.userIp = @"10.0.0.1"; // need to get the user's external IP in production
     
     error = nil;
     SAPIReportResult * reportRes = [reportQuery performQueryWithError:&error];
@@ -118,8 +117,7 @@
     SAPIReport * reportQuery = [[SAPIReport alloc] init];
     reportQuery.eventName = @"appearance";
     reportQuery.reportingIdArray = [NSArray arrayWithObjects:reportingId, @"foo", nil];
-    reportQuery.userIp = @"10.0.0.1"; // You probably want to report the user's external IP.
-                                      // PortMapper might be a solution for you : http://developer.apple.com/library/mac/#samplecode/PortMapper
+    reportQuery.userIp = @"10.0.0.1"; // need to get the user's external IP in production
         
     error = nil;
     SAPIReportResult * reportRes = [reportQuery performQueryWithError:&error];
