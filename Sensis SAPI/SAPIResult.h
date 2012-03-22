@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+extern const NSInteger SAPIResultSuccess;
+extern const NSInteger SAPIResultQueryModified;
+
 @interface SAPIResult : NSObject
 
 @property (retain) NSArray * results;

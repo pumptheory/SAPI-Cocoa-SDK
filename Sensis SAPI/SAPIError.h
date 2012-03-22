@@ -13,7 +13,7 @@ typedef enum {
     SAPIErrorValidationError = 400, // - see localizedDescription, failureReason and validationErrors
 } SAPIErrorCode;
 
-const NSString * SAPIErrorDomain;
+extern const NSString * SAPIErrorDomain;
 
 @interface SAPIError : NSError
 

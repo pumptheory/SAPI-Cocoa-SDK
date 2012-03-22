@@ -10,6 +10,8 @@
 
 #import "AFJSONRequestOperation.h"
 
+extern const NSInteger SAPIResultValidationError;
+
 @interface SAPISearch ()
 
 @property (retain) AFJSONRequestOperation * requestOperation;
@@ -129,12 +131,12 @@
                                      {
                                          NSInteger jsonCode = [jsonCodeNumber integerValue];
                                      
-                                         if (jsonCode == 200 || jsonCode == 206)
+                                         if (jsonCode == SAPIResultSuccess || jsonCode == SAPIResultQueryModified)
                                          {
                                              ok = YES;
                                              successBlock([SAPIResult resultWithJSONDictionary:JSON]);
                                          }
-                                         else if (jsonCode == 400)
+                                         else if (jsonCode == SAPIResultValidationError)
                                          {
                                              // being a bit defensive about the JSON data
                                              if ([[JSON objectForKey:@"message"] isKindOfClass:[NSString class]])

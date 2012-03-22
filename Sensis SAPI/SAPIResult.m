@@ -8,6 +8,10 @@
 
 #import "SAPIResult.h"
 
+const NSInteger SAPIResultSuccess = 200;
+const NSInteger SAPIResultQueryModified = 206;
+const NSInteger SAPIResultValidationError = 400;
+
 @implementation SAPIResult
 
 @synthesize results;
