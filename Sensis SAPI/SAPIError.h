@@ -13,6 +13,8 @@ typedef enum {
     SAPIErrorValidationError = 400, // - see localizedDescription, failureReason and validationErrors
     SAPIErrorHttpValidationError = 401,
     SAPIErrorForbidden = 403,
+    SAPIErrorRateLimited = 404, // The API returns 403 the same, but we differentiate here to make it
+                                // easier to code defensively for rate limiting
     SAPIErrorRequestTooLong = 414,
     SAPIErrorServiceNotFound = 596
 } SAPIErrorCode;

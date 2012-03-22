@@ -23,6 +23,7 @@ extern const NSInteger SAPIResultQueryModified;
 @property (retain) NSDate * date;
 @property NSUInteger time;
 @property NSInteger code;
+@property (retain) NSArray * details; // This isn't documented in the API docs, it can contain an array of strings, eg: "Number of pages capped at 50, too many results found."
 
 + (SAPIResult *)resultWithJSONDictionary:(NSDictionary *)jsonDictionary;
 - (id)initWithJSONDictionary:(NSDictionary *)jsonDictionary;

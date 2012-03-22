@@ -216,14 +216,21 @@
                                  if (masheryError)
                                      failureReason = masheryError;
                                  
+                                 NSRange match;
+                                 
                                  switch (statusCode)
                                  {
                                      case 400: // 400 is overloaded between json status return and http status code unfortunately
                                          sapiErrorCode = SAPIErrorHttpValidationError;
                                          break;
                                          
-                                     case SAPIErrorForbidden:
-                                         sapiErrorCode = SAPIErrorForbidden;
+                                     case 403: // HTTP error 403 is shared by permission error and rate limiting
+                                         
+                                         match = [masheryError rangeOfString:@"OVER"];
+                                         if (match.location != NSNotFound)
+                                             sapiErrorCode = SAPIErrorRateLimited;
+                                         else
+                                             sapiErrorCode = SAPIErrorForbidden;
                                          break;
                                          
                                      case SAPIErrorServiceNotFound:

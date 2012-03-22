@@ -20,6 +20,9 @@
     
     [SAPI setKey:SAPI_KEY];
     [SAPI setEnvironment:SAPI_ENVIRONMENT];
+    
+    // we need to stay slow so the tests can succeed in SAPI test environment due to rate limit
+    sleep(1);
 }
 
 - (void)tearDown
@@ -30,7 +33,7 @@
 }
 
 - (void)testSearch
-{
+{ 
     SAPISearch * searchQuery = [[SAPISearch alloc] init];
     searchQuery.query = @"Apple";
     SAPIError * error = nil;
@@ -67,7 +70,7 @@
     STAssertEquals(error.httpStatusCode , 403, @"Bad permissions query should return the http status code 200");
 }
 
-/*
+
 - (void)testResults
 {
     SAPISearch * searchQuery = [[SAPISearch alloc] init];
@@ -78,7 +81,15 @@
     STAssertNotNil(res, [NSString stringWithFormat:@"Simple Search query returned no results (%@)", error]);
     STAssertTrue([res.results isKindOfClass:[NSArray class]], @"Returned results are not NSArray");
     STAssertFalse([res.results count] == 0, @"We expect a search query of 'Apple' to have > 0 results");
+    
+    // we know that a query for "Apple" will return plenty of results - do some basic sanity checks on the first result
+    
+    NSDictionary * firstResult = [res.results objectAtIndex:0];
+    STAssertTrue([firstResult isKindOfClass:[NSDictionary class]], @"first result entry is not a dictionary");
+    STAssertTrue([[firstResult objectForKey:@"categories"] isKindOfClass:[NSArray class]], @"categories key is not a dictionary");
+    STAssertTrue([[firstResult objectForKey:@"detailsLink"] isKindOfClass:[NSString class]], @"detailsLink key is not a string");
+    STAssertTrue([[firstResult objectForKey:@"detailsLink"] hasPrefix:@"http"], @"detailsLink key does not start with http");
 }
-*/
+
 
 @end
