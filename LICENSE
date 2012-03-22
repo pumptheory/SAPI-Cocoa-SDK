@@ -15,6 +15,6 @@ Other Code
 
 The SAPI SDK contains ISO8601DateFormatter Copyright © 2006–2011 Peter Hosey.
 
-The Test iPhone App and Unit Tests contain AFNetworking Copyright © 2011 Gowalla (http://gowalla.com/) and JSONKit Copyright © 2011, John Engelhart.
+The Test iPhone App and Unit Tests contain AFNetworking Copyright © 2011 Gowalla (http://gowalla.com/), JSONKit Copyright © 2011 John Engelhart and SVProgressHUD Copyright © 2011 Sam Vermette.
 
 See the relevant LICENSE and README and header files.

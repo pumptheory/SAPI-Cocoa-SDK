@@ -12,6 +12,7 @@
 
 @property (retain, nonatomic) IBOutlet UITextField * queryField;
 @property (retain, nonatomic) IBOutlet UITextField * locationField;
+@property (retain, nonatomic) IBOutlet UILabel *errorField;
 
 - (IBAction)search:(id)sender;
 

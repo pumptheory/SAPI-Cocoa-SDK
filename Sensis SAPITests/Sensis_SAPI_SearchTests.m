@@ -9,7 +9,7 @@
 #import "Sensis_SAPI_SearchTests.h"
 
 #import "SAPI.h"
-#import "SAPIAccountKey.h"
+#import "SAPITestAccountKey.h"
 #import "SAPISearch.h"
 
 @implementation Sensis_SAPI_SearchTests
@@ -18,8 +18,8 @@
 {
     [super setUp];
     
-    [SAPI setKey:SAPI_KEY];
-    [SAPI setEnvironment:SAPI_ENVIRONMENT];
+    [SAPI setKey:SAPI_TEST_KEY];
+    [SAPI setEnvironment:SAPI_TEST_ENVIRONMENT];
     
     // we need to stay slow so the tests can succeed in SAPI test environment due to rate limit
     sleep(1);

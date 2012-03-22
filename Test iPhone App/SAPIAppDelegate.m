@@ -9,6 +9,8 @@
 #import "SAPIAppDelegate.h"
 
 #import "SAPIMasterViewController.h"
+#import "SAPI.h"
+#import "SAPITestAccountKey.h"
 
 @implementation SAPIAppDelegate
 
@@ -24,6 +26,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [SAPI setKey:SAPI_TEST_KEY];
+    [SAPI setEnvironment:SAPI_TEST_ENVIRONMENT];
+
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
 

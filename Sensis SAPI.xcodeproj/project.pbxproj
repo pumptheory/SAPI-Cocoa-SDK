@@ -32,6 +32,12 @@
 		645EFD5C151B353000D50EDE /* SAPIReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EFD5B151B353000D50EDE /* SAPIReport.m */; };
 		645EFD5F151B354200D50EDE /* SAPIReportResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EFD5E151B354200D50EDE /* SAPIReportResult.m */; };
 		645EFD63151B3ABD00D50EDE /* Sensis_SAPI_ReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EFD61151B3A4F00D50EDE /* Sensis_SAPI_ReportTests.m */; };
+		645EFD90151BEAD300D50EDE /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 645EFD7D151BEAD300D50EDE /* LICENSE.txt */; };
+		645EFD91151BEAD300D50EDE /* README.textile in Resources */ = {isa = PBXBuildFile; fileRef = 645EFD7E151BEAD300D50EDE /* README.textile */; };
+		645EFD92151BEAD300D50EDE /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 645EFD80151BEAD300D50EDE /* SVProgressHUD.bundle */; };
+		645EFD93151BEAD300D50EDE /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EFD82151BEAD300D50EDE /* SVProgressHUD.m */; };
+		645EFD9C151BEDA100D50EDE /* SAPISearchResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EFD9A151BEDA100D50EDE /* SAPISearchResultTableViewController.m */; };
+		645EFD9D151BEDA100D50EDE /* SAPISearchResultTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645EFD9B151BEDA100D50EDE /* SAPISearchResultTableViewController.xib */; };
 		64A70DB6151AE076005859E4 /* SAPIISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A70DB5151AE076005859E4 /* SAPIISO8601DateFormatter.m */; };
 		64A70DB7151AE076005859E4 /* SAPIISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A70DB5151AE076005859E4 /* SAPIISO8601DateFormatter.m */; };
 		64AB066B151977F0009C66A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AB066A151977F0009C66A8 /* UIKit.framework */; };
@@ -72,7 +78,7 @@
 		64493DE8151985F900A64AA6 /* SAPISearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPISearch.m; sourceTree = "<group>"; };
 		64493DEA1519871400A64AA6 /* SAPIResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPIResult.h; sourceTree = "<group>"; };
 		64493DEB1519871400A64AA6 /* SAPIResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPIResult.m; sourceTree = "<group>"; };
-		644940381519A07D00A64AA6 /* SAPIAccountKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPIAccountKey.h; sourceTree = "<group>"; };
+		644940381519A07D00A64AA6 /* SAPITestAccountKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPITestAccountKey.h; sourceTree = "<group>"; };
 		64494041151AAEDD00A64AA6 /* SAPIPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPIPrivate.h; sourceTree = "<group>"; };
 		6449404F151AFAB200A64AA6 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		64494050151AFAB200A64AA6 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
@@ -119,6 +125,14 @@
 		645EFD5E151B354200D50EDE /* SAPIReportResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPIReportResult.m; sourceTree = "<group>"; };
 		645EFD60151B3A4F00D50EDE /* Sensis_SAPI_ReportTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sensis_SAPI_ReportTests.h; sourceTree = "<group>"; };
 		645EFD61151B3A4F00D50EDE /* Sensis_SAPI_ReportTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sensis_SAPI_ReportTests.m; sourceTree = "<group>"; };
+		645EFD7D151BEAD300D50EDE /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		645EFD7E151BEAD300D50EDE /* README.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.textile; sourceTree = "<group>"; };
+		645EFD80151BEAD300D50EDE /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		645EFD81151BEAD300D50EDE /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		645EFD82151BEAD300D50EDE /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		645EFD99151BEDA100D50EDE /* SAPISearchResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPISearchResultTableViewController.h; sourceTree = "<group>"; };
+		645EFD9A151BEDA100D50EDE /* SAPISearchResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPISearchResultTableViewController.m; sourceTree = "<group>"; };
+		645EFD9B151BEDA100D50EDE /* SAPISearchResultTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAPISearchResultTableViewController.xib; sourceTree = "<group>"; };
 		64A70DAF151ADF34005859E4 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		64A70DB2151AE042005859E4 /* LICENSE_ISO8601DateFormatter */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_ISO8601DateFormatter; sourceTree = "<group>"; };
 		64A70DB4151AE076005859E4 /* SAPIISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPIISO8601DateFormatter.h; sourceTree = "<group>"; };
@@ -174,6 +188,7 @@
 		6449404C151AFAB200A64AA6 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				645EFD6B151BEAD300D50EDE /* SVProgressHUD */,
 				6449404D151AFAB200A64AA6 /* AFNetworking */,
 				644940A6151AFAB200A64AA6 /* JSONKit */,
 			);
@@ -268,6 +283,26 @@
 			name = Implementation;
 			sourceTree = "<group>";
 		};
+		645EFD6B151BEAD300D50EDE /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				645EFD7D151BEAD300D50EDE /* LICENSE.txt */,
+				645EFD7E151BEAD300D50EDE /* README.textile */,
+				645EFD7F151BEAD300D50EDE /* SVProgressHUD */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		645EFD7F151BEAD300D50EDE /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				645EFD80151BEAD300D50EDE /* SVProgressHUD.bundle */,
+				645EFD81151BEAD300D50EDE /* SVProgressHUD.h */,
+				645EFD82151BEAD300D50EDE /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		64AB065B151977F0009C66A8 = {
 			isa = PBXGroup;
 			children = (
@@ -304,7 +339,7 @@
 		64AB0670151977F0009C66A8 /* Test iPhone App */ = {
 			isa = PBXGroup;
 			children = (
-				644940381519A07D00A64AA6 /* SAPIAccountKey.h */,
+				644940381519A07D00A64AA6 /* SAPITestAccountKey.h */,
 				6449404C151AFAB200A64AA6 /* Externals */,
 				64AB0679151977F0009C66A8 /* SAPIAppDelegate.h */,
 				64AB067A151977F0009C66A8 /* SAPIAppDelegate.m */,
@@ -315,6 +350,9 @@
 				64AB06AB15197B33009C66A8 /* SAPISearchViewController.h */,
 				64AB06AC15197B33009C66A8 /* SAPISearchViewController.m */,
 				64AB06AD15197B33009C66A8 /* SAPISearchViewController.xib */,
+				645EFD99151BEDA100D50EDE /* SAPISearchResultTableViewController.h */,
+				645EFD9A151BEDA100D50EDE /* SAPISearchResultTableViewController.m */,
+				645EFD9B151BEDA100D50EDE /* SAPISearchResultTableViewController.xib */,
 			);
 			path = "Test iPhone App";
 			sourceTree = "<group>";
@@ -438,6 +476,10 @@
 				64AB0675151977F0009C66A8 /* InfoPlist.strings in Resources */,
 				64AB0684151977F0009C66A8 /* SAPIMasterViewController.xib in Resources */,
 				64AB06AF15197B33009C66A8 /* SAPISearchViewController.xib in Resources */,
+				645EFD90151BEAD300D50EDE /* LICENSE.txt in Resources */,
+				645EFD91151BEAD300D50EDE /* README.textile in Resources */,
+				645EFD92151BEAD300D50EDE /* SVProgressHUD.bundle in Resources */,
+				645EFD9D151BEDA100D50EDE /* SAPISearchResultTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +541,8 @@
 				645EFD55151B2F4000D50EDE /* SAPIMetadataResult.m in Sources */,
 				645EFD5C151B353000D50EDE /* SAPIReport.m in Sources */,
 				645EFD5F151B354200D50EDE /* SAPIReportResult.m in Sources */,
+				645EFD93151BEAD300D50EDE /* SVProgressHUD.m in Sources */,
+				645EFD9C151BEDA100D50EDE /* SAPISearchResultTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

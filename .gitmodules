@@ -4,3 +4,6 @@
 [submodule "Test iPhone App/Externals/JSONKit"]
 	path = Test iPhone App/Externals/JSONKit
 	url = https://github.com/johnezang/JSONKit.git
+[submodule "Test iPhone App/Externals/SVProgressHUD"]
+	path = Test iPhone App/Externals/SVProgressHUD
+	url = https://github.com/samvermette/SVProgressHUD.git
