@@ -23,7 +23,7 @@ const NSString * SAPIErrorDomain;
             validationErrors:(NSArray *)validationErrors
               httpStatusCode:(NSInteger)httpStatusCode;
 
-- (NSArray *)validationErrors; // an array of strings describing all the validation errors
-- (NSInteger)httpStatusCode;
+@property (readonly) NSArray * validationErrors; // an array of strings describing all the validation errors
+@property (readonly) NSInteger httpStatusCode;
 
 @end
