@@ -1,5 +1,5 @@
 //
-//  Sensis_SAPITests.h
+//  Sensis_SAPI_SearchTests.h
 //  Sensis SAPITests
 //
 //  Created by Mark Aufflick on 21/03/12.

@@ -1,5 +1,5 @@
 //
-//  Sensis_SAPITests.m
+//  Sensis_SAPI_SearchTests.m
 //  Sensis SAPITests
 //
 //  Created by Mark Aufflick on 21/03/12.
@@ -46,6 +46,8 @@ NSUInteger appleResultCount = 0;
     STAssertFalse([res.results count] == 0, @"We expect a search query of 'Apple' to have > 0 results");
     
     appleResultCount = res.totalResults;
+    
+    [searchQuery release];
 }
 
 - (void)testBSearchStateFilter
@@ -63,6 +65,8 @@ NSUInteger appleResultCount = 0;
     STAssertTrue(res.totalResults < appleResultCount, @"doing the same search with a state filter should have fewer results");
     
     appleResultCount = res.totalResults;
+    
+    [searchQuery release];
 }
 
 - (void)testCSearchMultipleStateFilter
@@ -78,6 +82,8 @@ NSUInteger appleResultCount = 0;
     STAssertFalse([res.results count] == 0, @"We expect a search query of 'Apple' to have > 0 results");
     
     STAssertTrue(res.totalResults > appleResultCount, @"doing the same search with a multiple state filter should have more results than with one state");
+    
+    [searchQuery release];
 }
 
 - (void)testValidationError
@@ -90,6 +96,8 @@ NSUInteger appleResultCount = 0;
     STAssertNotNil(error, @"Invalid search did not return an error");
     STAssertEquals(error.code, SAPIErrorValidationError, @"Invalid search did not return the SAPIErrorValidationError error code");
     STAssertEquals(error.httpStatusCode , 200, @"Invalid search term should return the http status code 200");
+    
+    [searchQuery release];
 }
 
 - (void)testPermissionsError
@@ -104,6 +112,8 @@ NSUInteger appleResultCount = 0;
     STAssertNotNil(error, @"Bad permissions query did not return an error");
     STAssertEquals(error.code, SAPIErrorForbidden, @"Bad permissions query did not return the SAPIErrorForbidden error code");
     STAssertEquals(error.httpStatusCode , 403, @"Bad permissions query should return the http status code 200");
+    
+    [searchQuery release];
 }
 
 
@@ -125,6 +135,8 @@ NSUInteger appleResultCount = 0;
     STAssertTrue([[firstResult objectForKey:@"categories"] isKindOfClass:[NSArray class]], @"categories key is not a dictionary");
     STAssertTrue([[firstResult objectForKey:@"detailsLink"] isKindOfClass:[NSString class]], @"detailsLink key is not a string");
     STAssertTrue([[firstResult objectForKey:@"detailsLink"] hasPrefix:@"http"], @"detailsLink key does not start with http");
+    
+    [searchQuery release];
 }
 
 

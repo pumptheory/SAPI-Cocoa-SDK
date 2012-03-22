@@ -7,8 +7,6 @@
 //
 
 #import "SAPIEndpoint.h"
-#import "SAPIResult.h"
-#import "SAPIError.h"
 
 @interface SAPISearch : SAPIEndpoint
 
@@ -29,5 +27,7 @@
 @property (copy) NSString * boundingBox;      // Filter results by requiring location to be inside the bounding box - see http://developers.sensis.com.au/docs/using_endpoints/Bounding_Box_Filtering
 @property (retain) NSArray * contentArray;    // Filter results by content - NSArray of strings - see http://developers.sensis.com.au/docs/using_endpoints/Filtering_by_Content_Type
 @property (retain) NSArray * productKeywordArray; // Filter results by keyword - NSArray of strings - see http://developers.sensis.com.au/docs/using_endpoints/Filtering_by_Product_Keyword
+
+// The methods to perform the query are in the baseclass header, SAPIEndpoint.h
 
 @end
