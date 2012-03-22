@@ -91,6 +91,7 @@
 		6449403B1519ABFC00A64AA6 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		6449403C1519ABFC00A64AA6 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		6449403D1519ABFC00A64AA6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		64494041151AAEDD00A64AA6 /* SAPIPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAPIPrivate.h; path = "Sensis SAPI/SAPIPrivate.h"; sourceTree = "<group>"; };
 		64AB0666151977F0009C66A8 /* Sensis SAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sensis SAPI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64AB066A151977F0009C66A8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		64AB066C151977F0009C66A8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -288,6 +289,7 @@
 				64493DE5151985E100A64AA6 /* SAPIEndpoint.m */,
 				64493DEA1519871400A64AA6 /* SAPIResult.h */,
 				64493DEB1519871400A64AA6 /* SAPIResult.m */,
+				64494041151AAEDD00A64AA6 /* SAPIPrivate.h */,
 			);
 			name = "Sensis SAPI";
 			sourceTree = "<group>";

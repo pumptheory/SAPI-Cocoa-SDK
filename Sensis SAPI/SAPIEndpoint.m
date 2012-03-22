@@ -8,8 +8,18 @@
 
 #import "SAPIEndpoint.h"
 #import "AFHTTPClient.h"
+#import "SAPIPrivate.h"
 
 @implementation SAPIEndpoint
+
+@synthesize requestOperation=_requestOperation;
+
+- (void)dealloc
+{
+    [_requestOperation release], _requestOperation = nil;
+
+    [super dealloc];
+}
 
 - (NSString *)endpoint
 {
@@ -77,6 +87,167 @@
                                    [self queryString]];
 
     return [NSURL URLWithString:requestURLString];
+}
+
+#define SAPIQueryInitialCondition 0
+#define SAPIQueryWaitingCondition 1
+#define SAPIQueryFinishedCondition 2
+
+- (SAPIResult *)performQueryWithError:(SAPIError **)returnError
+{
+    __block SAPIResult * returnResult = nil;
+    NSConditionLock * lock = [[NSConditionLock alloc] initWithCondition:SAPIQueryInitialCondition];
+    [lock lockWhenCondition:SAPIQueryInitialCondition];
+    
+    [self setupRequestForQueryAsyncSuccess:^(SAPIResult *result) {
+        
+        [lock lockWhenCondition:SAPIQueryWaitingCondition];
+        
+        returnResult = [result retain];
+        
+        [lock unlockWithCondition:SAPIQueryFinishedCondition];
+        
+    } failure:^(SAPIError *error) {
+        
+        [lock lockWhenCondition:SAPIQueryWaitingCondition];
+        
+        if (returnError)
+        {
+            *returnError = [error retain];
+        }
+        
+        [lock unlockWithCondition:SAPIQueryFinishedCondition];
+    }];
+    
+    self.requestOperation.successCallbackQueue = dispatch_get_global_queue(0, 0);
+    self.requestOperation.failureCallbackQueue = dispatch_get_global_queue(0, 0);
+    
+    [self.requestOperation start];
+    
+    [lock unlockWithCondition:SAPIQueryWaitingCondition];
+    [lock lockWhenCondition:SAPIQueryFinishedCondition];
+    [lock unlockWithCondition:SAPIQueryInitialCondition];
+    
+    if (returnError)
+        [*returnError autorelease];
+    
+    return [returnResult autorelease];
+}
+
+- (void)performQueryAsyncSuccess:(void (^)(SAPIResult * result))successBlock
+                         failure:(void (^)(SAPIError * error))failureBlock
+{
+    [self setupRequestForQueryAsyncSuccess:successBlock failure:failureBlock];
+    [self.requestOperation start];
+}
+
+- (void)setupRequestForQueryAsyncSuccess:(void (^)(SAPIResult *))successBlock failure:(void (^)(SAPIError *))failureBlock
+{
+    NSURLRequest * request = [NSURLRequest requestWithURL:[self requestURL]];
+    
+#ifdef DEBUG
+    NSLog(@"request: %@", request);
+#endif
+    
+    successBlock = [[successBlock copy] autorelease];
+    failureBlock = [[failureBlock copy] autorelease];
+    
+    self.requestOperation = [AFJSONRequestOperation 
+                             JSONRequestOperationWithRequest:request
+                             success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                                 
+                                 BOOL ok = NO;
+                                 NSString * failureReason = nil;
+                                 NSArray * validationErrors = nil;
+                                 NSString * errorDescription = @"Invalid response data";
+                                 SAPIErrorCode sapiErrorCode = SAPIErrorServerError;
+                                 
+                                 if ([JSON isKindOfClass:[NSDictionary class]])
+                                 {
+                                     NSNumber * jsonCodeNumber = [JSON objectForKey:@"code"];
+                                     
+                                     if ([jsonCodeNumber isKindOfClass:[NSNumber class]])
+                                     {
+                                         NSInteger jsonCode = [jsonCodeNumber integerValue];
+                                         
+                                         if (jsonCode == SAPIResultSuccess || jsonCode == SAPIResultQueryModified)
+                                         {
+                                             ok = YES;
+                                             successBlock([SAPIResult resultWithJSONDictionary:JSON]);
+                                         }
+                                         else if (jsonCode == SAPIResultValidationError)
+                                         {
+                                             // being a bit defensive about the JSON data
+                                             if ([[JSON objectForKey:@"message"] isKindOfClass:[NSString class]])
+                                                 failureReason = [JSON objectForKey:@"message"];
+                                             
+                                             if ([[JSON objectForKey:@"validationErrors"] isKindOfClass:[NSArray class]])
+                                                 validationErrors = [JSON objectForKey:@"validationErrors"];
+                                             
+                                             errorDescription = [NSString stringWithFormat:@"%@ %@",
+                                                                 failureReason,
+                                                                 [validationErrors componentsJoinedByString:@", "]];
+                                             
+                                             sapiErrorCode = SAPIErrorValidationError;
+                                         }
+                                     }
+                                 }
+                                 
+                                 if (!ok)
+                                 {
+                                     SAPIError * sapiError = [SAPIError errorWithCode:sapiErrorCode
+                                                                     errorDescription:errorDescription
+                                                                        failureReason:failureReason
+                                                                     validationErrors:validationErrors
+                                                                       httpStatusCode:response.statusCode];
+                                     failureBlock(sapiError);
+                                 }
+                             }
+                             failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                                 
+                                 NSUInteger statusCode = response.statusCode;
+                                 SAPIError * sapiError = nil;
+                                 NSString * failureReason = [error localizedFailureReason];;
+                                 NSArray * validationErrors = nil;
+                                 NSString * errorDescription = [error localizedDescription];
+                                 SAPIErrorCode sapiErrorCode;
+                                 
+                                 NSString * masheryError = [[response allHeaderFields] objectForKey:@"X-Mashery-Error-Code"];
+                                 if (masheryError)
+                                     failureReason = masheryError;
+                                 
+                                 switch (statusCode)
+                                 {
+                                     case 400: // 400 is overloaded between json status return and http status code unfortunately
+                                         sapiErrorCode = SAPIErrorHttpValidationError;
+                                         break;
+                                         
+                                     case SAPIErrorForbidden:
+                                         sapiErrorCode = SAPIErrorForbidden;
+                                         break;
+                                         
+                                     case SAPIErrorServiceNotFound:
+                                         sapiErrorCode = SAPIErrorServiceNotFound;
+                                         break;
+                                         
+                                     case SAPIErrorRequestTooLong:
+                                         sapiErrorCode = SAPIErrorRequestTooLong;
+                                         break;
+                                         
+                                     default:
+                                         sapiErrorCode = SAPIErrorServerError;
+                                         break;
+                                 }
+                                 
+                                 sapiError = [SAPIError errorWithCode:sapiErrorCode
+                                                     errorDescription:errorDescription
+                                                        failureReason:failureReason 
+                                                     validationErrors:validationErrors
+                                                       httpStatusCode:statusCode];
+                                 
+                                 failureBlock(sapiError);
+                             }
+                             ];
 }
 
 @end
