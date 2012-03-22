@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    SAPIErrorServerError = -1, // ie. the REST Api has returned an HTTP 500 response - see localisedDescription, failureReason and httpStatusCode
+    SAPIErrorServerError = -1, // ie. the REST Api has returned an HTTP 500 response or other unknown error - see localisedDescription, failureReason and httpStatusCode
     SAPIErrorValidationError = 400, // - see localizedDescription, failureReason and validationErrors
+    SAPIErrorHttpValidationError = 401,
+    SAPIErrorForbidden = 403,
+    SAPIErrorRequestTooLong = 414,
+    SAPIErrorServiceNotFound = 596
 } SAPIErrorCode;
 
 extern const NSString * SAPIErrorDomain;

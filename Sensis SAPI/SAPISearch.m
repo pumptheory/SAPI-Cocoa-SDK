@@ -171,11 +171,34 @@ extern const NSInteger SAPIResultValidationError;
                                  NSString * failureReason = [error localizedFailureReason];;
                                  NSArray * validationErrors = nil;
                                  NSString * errorDescription = [error localizedDescription];
-                                 SAPIErrorCode sapiErrorCode = SAPIErrorServerError;
+                                 SAPIErrorCode sapiErrorCode;
                                  
                                  NSString * masheryError = [[response allHeaderFields] objectForKey:@"X-Mashery-Error-Code"];
                                  if (masheryError)
                                      failureReason = masheryError;
+                                 
+                                 switch (statusCode)
+                                 {
+                                     case 400: // 400 is overloaded between json status return and http status code unfortunately
+                                         sapiErrorCode = SAPIErrorHttpValidationError;
+                                         break;
+                                         
+                                     case SAPIErrorForbidden:
+                                         sapiErrorCode = SAPIErrorForbidden;
+                                         break;
+                                         
+                                     case SAPIErrorServiceNotFound:
+                                         sapiErrorCode = SAPIErrorServiceNotFound;
+                                         break;
+                                         
+                                     case SAPIErrorRequestTooLong:
+                                         sapiErrorCode = SAPIErrorRequestTooLong;
+                                         break;
+                                         
+                                     default:
+                                         sapiErrorCode = SAPIErrorServerError;
+                                         break;
+                                 }
                                  
                                  sapiError = [SAPIError errorWithCode:sapiErrorCode
                                                      errorDescription:errorDescription

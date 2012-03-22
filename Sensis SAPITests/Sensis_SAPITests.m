@@ -39,7 +39,6 @@
     STAssertNotNil(res, [NSString stringWithFormat:@"Simple Search query returned no results (%@)", error]);
     STAssertTrue([res.results isKindOfClass:[NSArray class]], @"Returned results are not NSArray");
     STAssertFalse([res.results count] == 0, @"We expect a search query of 'Apple' to have > 0 results");
-
 }
 
 - (void)testValidationError
@@ -53,5 +52,33 @@
     STAssertEquals(error.code, SAPIErrorValidationError, @"Invalid search did not return the SAPIErrorValidationError error code");
     STAssertEquals(error.httpStatusCode , 200, @"Invalid search term should return the http status code 200");
 }
+
+- (void)testPermissionsError
+{
+    [SAPI setKey:@"foo"];
+    SAPISearch * searchQuery = [[SAPISearch alloc] init];
+    searchQuery.query = @"Apple";
+    SAPIError * error = nil;
+    SAPIResult * res = [searchQuery performQueryWithError:&error];
+    
+    STAssertNil(res, @"Bad permissions query returned a result");
+    STAssertNotNil(error, @"Bad permissions query did not return an error");
+    STAssertEquals(error.code, SAPIErrorForbidden, @"Bad permissions query did not return the SAPIErrorForbidden error code");
+    STAssertEquals(error.httpStatusCode , 403, @"Bad permissions query should return the http status code 200");
+}
+
+/*
+- (void)testResults
+{
+    SAPISearch * searchQuery = [[SAPISearch alloc] init];
+    searchQuery.query = @"Apple";
+    SAPIError * error = nil;
+    SAPIResult * res = [searchQuery performQueryWithError:&error];
+    
+    STAssertNotNil(res, [NSString stringWithFormat:@"Simple Search query returned no results (%@)", error]);
+    STAssertTrue([res.results isKindOfClass:[NSArray class]], @"Returned results are not NSArray");
+    STAssertFalse([res.results count] == 0, @"We expect a search query of 'Apple' to have > 0 results");
+}
+*/
 
 @end
