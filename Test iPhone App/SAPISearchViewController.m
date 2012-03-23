@@ -25,15 +25,6 @@
 @synthesize errorField=_errorString;
 @synthesize searchQuery=_searchQuery;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
-    {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)dealloc {
     
     [_queryField release];
@@ -42,16 +33,6 @@
     [_errorString release];
     [super dealloc];
 }
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
@@ -70,12 +51,6 @@
     self.searchQuery = nil;
     
     [super viewDidUnload];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark - IBActions
