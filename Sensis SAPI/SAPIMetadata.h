@@ -10,15 +10,15 @@
 
 #import "SAPIMetadataResult.h"
 
-#define SAPIMetadataCategoriesKey @"categories"
-#define SAPIMetadataCategoryGroupsKey @"categoryGroups"
+extern const NSString * SAPIMetadataCategoriesKey; // @"categories"
+extern const NSString * SAPIMetadataCategoryGroupsKey; // @"categoryGroups"
 
 @interface SAPIMetadata : SAPIEndpoint
 
 // See also the endpoint reference for more detail: http://developers.sensis.com.au/docs/endpoint_reference/Metadata
 
-@property (copy) NSString * dataType; // the type of metadata required
-                                      // currently this can be either "categories" or "categoryGroups" - use the above #defines
+@property (assign) const NSString * dataType; // the type of metadata required
+                                      // currently this can be either "categories" or "categoryGroups" - use the above constants
 
 - (SAPIMetadataResult *)performQueryWithError:(SAPIError **)error;
 

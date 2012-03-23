@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class SAPISearchViewController;
-
 @interface SAPIMasterViewController : UITableViewController
-
-@property (strong, nonatomic) SAPISearchViewController * searchViewController;
 
 @end

@@ -9,10 +9,23 @@
 #import "SAPIMasterViewController.h"
 
 #import "SAPISearchViewController.h"
+#import "SAPIMetadataViewController.h"
+#import "SAPIMetadata.h"
+#import "SVProgressHUD.h"
+
+@interface SAPIMasterViewController ()
+
+@property (strong, nonatomic) SAPISearchViewController * searchViewController;
+@property (strong, nonatomic) SAPIMetadataViewController * metadataViewController;
+@property (strong) SAPIMetadata * metadataQuery;
+
+@end
 
 @implementation SAPIMasterViewController
 
 @synthesize searchViewController=_searchViewController;
+@synthesize metadataViewController=_metadataViewController;
+@synthesize metadataQuery=_metadataQuery;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,6 +39,8 @@
 - (void)dealloc
 {
     [_searchViewController release], _searchViewController = nil;
+    [_metadataViewController release], _metadataViewController = nil;
+    [_metadataQuery release], _metadataQuery = nil;
     
     [super dealloc];
 }
@@ -53,7 +68,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 3;
 }
 
 // Customize the appearance of table view cells.
@@ -68,19 +83,63 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
-    // Configure the cell.
-    cell.textLabel.text = @"Search";
-    cell.detailTextLabel.text = @"Also GetListingById and Report";
+    switch (indexPath.row)
+    {
+        case 0:
+            cell.textLabel.text = @"Search";
+            cell.detailTextLabel.text = @"Also GetListingById and Report";
+            break;
+            
+        case 1:
+            cell.textLabel.text = @"Categories";
+            cell.detailTextLabel.text = @"Metadata endpoint";
+            break;
+            
+        case 2:
+            cell.textLabel.text = @"CategoryGroups";
+            cell.detailTextLabel.text = @"Metadata endpoint";
+            break;
+
+    }
+
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (!self.searchViewController)
+    switch (indexPath.row)
     {
-        self.searchViewController = [[[SAPISearchViewController alloc] initWithNibName:@"SAPISearchViewController" bundle:nil] autorelease];
+        case 0:
+            if (!self.searchViewController)
+            {
+                self.searchViewController = [[[SAPISearchViewController alloc] initWithNibName:@"SAPISearchViewController" bundle:nil] autorelease];
+            }
+            [self.navigationController pushViewController:self.searchViewController animated:YES];
+            break;
+            
+        case 1:
+        case 2:            
+            [SVProgressHUD showWithStatus:@"Getting Metadata" maskType:SVProgressHUDMaskTypeBlack];
+            
+            self.metadataQuery = [[[SAPIMetadata alloc] init] autorelease];
+            self.metadataQuery.dataType = indexPath.row == 1 ? SAPIMetadataCategoriesKey : SAPIMetadataCategoryGroupsKey;
+            
+            [self.metadataQuery performQueryAsyncSuccess:^(SAPIMetadataResult *result) {
+                [SVProgressHUD dismiss];
+                
+                if (!self.metadataViewController)
+                    self.metadataViewController = [[[SAPIMetadataViewController alloc] initWithNibName:@"SAPIMetadataViewController" bundle:nil] autorelease];
+
+                self.metadataViewController.metadataResult = result;
+                self.metadataViewController.metadataType = self.metadataQuery.dataType;
+                
+                [self.navigationController pushViewController:self.metadataViewController animated:YES];
+            } failure:^(SAPIError *error) {
+                [SVProgressHUD dismissWithError:[error localizedDescription] afterDelay:4];
+            }];
+            
+            break;
     }
-    [self.navigationController pushViewController:self.searchViewController animated:YES];
 }
 
 @end

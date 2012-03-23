@@ -9,16 +9,12 @@
 #import "SAPIMetadata.h"
 #import "SAPIPrivate.h"
 
+const NSString * SAPIMetadataCategoriesKey = @"categories";
+const NSString * SAPIMetadataCategoryGroupsKey = @"categoryGroups";
+
 @implementation SAPIMetadata
 
 @synthesize dataType;
-
-- (void)dealloc
-{
-    [dataType release];
-    
-    [super dealloc];
-}
 
 - (NSString *)endpoint
 {
