@@ -1,7 +1,7 @@
-![SAPI Logo](http://img.tweetimag.es/i/sensisapi_o)
-
 Sensis SAPI Cocoa SDK
 =====================
+
+![SAPI Logo](http://img.tweetimag.es/i/sensisapi_b) ![Yellow Pages Logo](http://developers.sensis.com.au/files/yp-api-poweredby-sticky-71x78.png)
 
 The Sensis API (SAPI) gives you access to Australian local business listings from Yellow Pages and White Pages.
 
@@ -33,7 +33,7 @@ searchQuery.query = @"Apple";
 }];
 ```
 
-See the Classes section below for information about the other endpoints  SAPIGetListingById, SAPIReport and SAPIMetadata.
+See the [Classes](#classes) section below for information about the other endpoints  SAPIGetListingById, SAPIReport and SAPIMetadata.
 
 Adding the SAPI SDK to your project
 ===================================
@@ -94,20 +94,107 @@ You then need to edit `Test iPhone App/SAPITestAccountKey.h` and replace `put_yo
 
 The one Xcode project contains the sample test app that you can run (⌘-R) and unit tests for each endpoint (⌘-U).
 
-Classes
+Classes<a name="classes" />
 =======
 
-Class name | Description | Cocoa Header Docs | Relevant SAPI HTTP Docs
------------|-------------|-------------------|------------------------
-SAPI       | This class has two class methods you use to set the API key and environment<br /><br />`+ (void)setKey:`<br />`+ (void)setEnvironment` | [SAPI.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPI.h) | 
-SAPIError  | A subclass of `NSError` which is set in the case of an error that resulted in you getting no results. You will want to check the error code to eg. differentiate between a server error and rate limiting (in the latter case retrying may work). The relevant codes are detailed in the header file, and you can see examples of checking the code in the unit tests.<br /><br />**NB:** the SAPI REST interface confuses successful response codes and HTTP codes somewhat which results in a not-quite 1:1 mapping between the integer codes used by Cocoa SDK and REST interface. The best bet is to stick to using the constants described in the header file. | [SAPIError.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIError.h) | The relevant endpoint docs<br /><br />[HTTP Status Codes](http://developers.sensis.com.au/docs/reference/HTTP_Status_Codes)
-SAPISearch | Implements the SAPI search endpoint.<br />Create an instance of `SAPISearch`, set properties relevant to your search criteria (at least one of `query` or `location` are required, then perform the query using either the asynchronous or synchronous method:<br /><br />async: `- (void)performQueryAsyncSuccess:(void (^)(SAPISearchResult * result))successBloc` `failure:(void (^)(SAPIError * error))failureBlock`<br />sync: `- (SAPISearchResult *)performQueryWithError:(SAPIError **)error` | [SAPISearch.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPISearch.h)<br /><br />[SAPIEndpoint.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIEndpoint.h) | [Search endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Search)
-SAPISearchResult | An instance of this is returned, or passed into the success block, in the case of a successful search or getListingById query (in the latter case there will always be only zero or one dictionary in the results array).<br /><br />The main results are in the `results` property, as an array of dictionaries formatted exactly as the JSON is returned. See the header for information on other properties, and the [Listing Schema](http://developers.sensis.com.au/docs/reference/Listing_Schema) for information on the possible contents of the results array of dictionaries. | [SAPISearchResult.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPISearchResult.h)<br /><br />[SAPIResult.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIResult.h) | [Search endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Search)<br /><br />[Listing Schema](http://developers.sensis.com.au/docs/reference/Listing_Schema)
-SAPIGetListingById | Implements the SAPI getListingById endpoint.<br />Create an instance of `SAPIGetListingById`, set the `businessId` property (which you obtained from the `id` key of a search result), then perform the query using either the asynchronous or synchronous method:<br /><br />async: `- (void)performQueryAsyncSuccess:(void (^)(SAPISearchResult * result))successBloc` `failure:(void (^)(SAPIError * error))failureBlock`<br />sync: `- (SAPISearchResult *)performQueryWithError:(SAPIError **)error` | [SAPIGetListingById.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIGetListingById.h)<br /><br />[SAPIEndpoint.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIEndpoint.h) | [getListingById endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Get_by_Listing_ID)
-SAPIMetadata | Implements the metadata endpoint for obtaining categories or categoryGroups metadata. | [SAPIMetadata.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIMetadata.h)<br /><br />[SAPIEndpoint.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIEndpoint.h) | [metadata endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Metadata)
-SAPIMetadataResult | An instance of this is returned, or passed into the success block, in the case of a successful metadata query. Set the `dataType` property to one of `SAPIMetadataCategoriesKey` or `SAPIMetadataCategoryGroupsKey` before executing the query. One of the `categories` or `categoryGroups` array properties are set - depending on which query was performed. | [SAPIMetadataResult.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIMetadataResult.h)<br /><br />[SAPIEndpoint.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIEndpoint.h) | [metadata endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Metadata)
-SAPIReport | Implements the reporting endpoint. | [SAPIReport.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIReport.h)<br /><br />[SAPIEndpoint.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIEndpoint.h) | [report endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Report)<br /><br />[Reporting Usage Events](http://developers.sensis.com.au/docs/endpoint_reference/Reporting_Usage_Events)
-SAPIReportResult | An instance of this is returned, or passed into the success block, in the case of a successful report query. Different properties are required for different reporting types. See the header and HTTP docs for more info. | [SAPIReportResult.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIReportResult.h)<br /><br />[SAPIEndpoint.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIEndpoint.h) | [report endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Report)<br /><br />[Reporting Usage Events](http://developers.sensis.com.au/docs/endpoint_reference/Reporting_Usage_Events)
+### SAPI
+
+This class has two class methods you use to set the API key and environment
+
+```objective-c
++ (void)setKey:
++ (void)setEnvironment
+```
+
+*Header:* [SAPI.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPI.h)
+
+### SAPIError
+
+A subclass of `NSError` which is set in the case of an error that resulted in you getting no results. You will want to check the error code to eg. differentiate between a server error and rate limiting (in the latter case retrying may work). The relevant codes are detailed in the header file, and you can see examples of checking the code in the unit tests.
+
+**NB:** the SAPI REST interface confuses successful response codes and HTTP codes somewhat which results in a not-quite 1:1 mapping between the integer codes used by Cocoa SDK and REST interface. The best bet is to stick to using the constants described in the header file.
+
+*Header:* [SAPIError.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIError.h)
+
+*Relevant SAPI REST Docs:* See the relevant endpoint docs and [HTTP Status Codes](http://developers.sensis.com.au/docs/reference/HTTP_Status_Codes)
+
+Request Classes
+---------------
+
+### SAPISearch
+
+Implements the SAPI search endpoint.
+
+Create an instance of `SAPISearch`, set properties relevant to your search criteria (at least one of `query` or `location` are required, then perform the query using either the asynchronous or synchronous method:
+
+```objective-c
+- (void)performQueryAsyncSuccess:(void (^)(SAPISearchResult * result))successBloc failure:(void (^)(SAPIError * error))failureBlock
+- (SAPISearchResult *)performQueryWithError:(SAPIError **)error
+```
+
+*Headers:* [SAPISearch.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPISearch.h) ⇽ [SAPIEndpoint.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIEndpoint.h)
+
+*Relevant SAPI REST Docs:* [Search endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Search)
+
+### SAPIGetListingById
+
+Implements the SAPI getListingById endpoint.
+
+Create an instance of `SAPIGetListingById`, set the `businessId` property (which you obtained from the `id` key of a search result), then perform the query using either the asynchronous or synchronous method:
+
+```objective-c
+- (void)performQueryAsyncSuccess:(void (^)(SAPISearchResult * result))successBloc failure:(void (^)(SAPIError * error))failureBlock
+- (SAPISearchResult *)performQueryWithError:(SAPIError **)error
+```
+
+*Headers:* [SAPIGetListingById.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIGetListingById.h) ⇽ [SAPIEndpoint.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIEndpoint.h)
+
+*Relevant SAPI REST Docs:* [getListingById endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Get_by_Listing_ID)
+
+### SAPIMetadata
+
+Implements the metadata endpoint for obtaining categories or categoryGroups metadata.
+
+*Headers:* [SAPIMetadata.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIMetadata.h) ⇽ [SAPIEndpoint.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIEndpoint.h)
+
+*Relevant SAPI REST Docs:* [metadata endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Metadata)
+
+### SAPIReport
+
+Implements the reporting endpoint.
+
+*Headers:* [SAPIReport.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIReport.h) ⇽ [SAPIEndpoint.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIEndpoint.h)
+
+*Relevant SAPI REST Docs:* [report endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Report); [Reporting Usage Events](http://developers.sensis.com.au/docs/endpoint_reference/Reporting_Usage_Events)
+
+Result Classes
+--------------
+
+### SAPISearchResult
+
+An instance of this is returned, or passed into the success block, in the case of a successful search or getListingById query (in the latter case there will always be only zero or one dictionary in the results array).
+
+The main results are in the `results` property, as an array of dictionaries formatted exactly as the JSON is returned. See the header for information on other properties, and the [Listing Schema](http://developers.sensis.com.au/docs/reference/Listing_Schema) for information on the possible contents of the results array of dictionaries.
+
+*Headers:* [SAPISearchResult.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPISearchResult.h) ⇽ [SAPIResult.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIResult.h)
+
+*Relevant SAPI REST Docs:* [Search endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Search); [Listing Schema](http://developers.sensis.com.au/docs/reference/Listing_Schema)
+
+### SAPIMetadataResult
+
+An instance of this is returned, or passed into the success block, in the case of a successful metadata query. Set the `dataType` property to one of `SAPIMetadataCategoriesKey` or `SAPIMetadataCategoryGroupsKey` before executing the query. One of the `categories` or `categoryGroups` array properties are set - depending on which query was performed.
+
+*Headers:* [SAPIMetadataResult.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIMetadataResult.h) ⇽ [SAPIEndpoint.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIEndpoint.h)
+
+*Relevant SAPI REST Docs:* [metadata endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Metadata)
+
+### SAPIReportResult
+
+An instance of this is returned, or passed into the success block, in the case of a successful report query. Different properties are required for different reporting types. See the header and HTTP docs for more info.
+
+*Headers:* [SAPIReportResult.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIReportResult.h) ⇽ [SAPIEndpoint.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIEndpoint.h)
+
+*Relevant SAPI REST Docs:* [report endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Report)<br /><br />[Reporting Usage Events](http://developers.sensis.com.au/docs/endpoint_reference/Reporting_Usage_Events)
 
 
 Requirements
