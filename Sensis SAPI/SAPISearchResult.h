@@ -23,5 +23,6 @@
 @property (retain) NSDate * date;
 
 // also time, code and possibly details -- defined in the baseclass SAPIResult
+// the code value is interesting for searches to see if spell checking was applied. See SAPIResult.h
 
 @end

@@ -195,6 +195,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6408F51C151C394900895F43 /* Results & Errors */ = {
+			isa = PBXGroup;
+			children = (
+				645EFD49151B28D800D50EDE /* SAPISearchResult.h */,
+				645EFD4A151B28D800D50EDE /* SAPISearchResult.m */,
+				645EFD53151B2F4000D50EDE /* SAPIMetadataResult.h */,
+				645EFD54151B2F4000D50EDE /* SAPIMetadataResult.m */,
+				645EFD5D151B354200D50EDE /* SAPIReportResult.h */,
+				645EFD5E151B354200D50EDE /* SAPIReportResult.m */,
+				64493DDA15197ED800A64AA6 /* SAPIError.h */,
+				64493DDB15197ED800A64AA6 /* SAPIError.m */,
+			);
+			name = "Results & Errors";
+			sourceTree = "<group>";
+		};
 		6449404C151AFAB200A64AA6 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,18 +288,10 @@
 			children = (
 				64493DE11519843A00A64AA6 /* SAPI.h */,
 				64493DE21519843A00A64AA6 /* SAPI.m */,
-				64493DDA15197ED800A64AA6 /* SAPIError.h */,
-				64493DDB15197ED800A64AA6 /* SAPIError.m */,
 				64493DE4151985E100A64AA6 /* SAPIEndpoint.h */,
 				64493DE5151985E100A64AA6 /* SAPIEndpoint.m */,
 				64493DEA1519871400A64AA6 /* SAPIResult.h */,
 				64493DEB1519871400A64AA6 /* SAPIResult.m */,
-				645EFD49151B28D800D50EDE /* SAPISearchResult.h */,
-				645EFD4A151B28D800D50EDE /* SAPISearchResult.m */,
-				645EFD53151B2F4000D50EDE /* SAPIMetadataResult.h */,
-				645EFD54151B2F4000D50EDE /* SAPIMetadataResult.m */,
-				645EFD5D151B354200D50EDE /* SAPIReportResult.h */,
-				645EFD5E151B354200D50EDE /* SAPIReportResult.m */,
 				64494041151AAEDD00A64AA6 /* SAPIPrivate.h */,
 				64A70DB2151AE042005859E4 /* LICENSE_ISO8601DateFormatter */,
 				64A70DB4151AE076005859E4 /* SAPIISO8601DateFormatter.h */,
@@ -413,6 +420,7 @@
 			isa = PBXGroup;
 			children = (
 				645EFD4F151B2DC100D50EDE /* Endoints */,
+				6408F51C151C394900895F43 /* Results & Errors */,
 				645EFD50151B2DDB00D50EDE /* Implementation */,
 			);
 			path = "Sensis SAPI";
