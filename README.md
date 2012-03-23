@@ -76,7 +76,7 @@ When you clone your project repository somewhere else, after the `git clone` you
 
 To learn more about git submodules, see <http://help.github.com/submodules/> and <http://book.git-scm.com/5_submodules.html>.
 
-Adding AFNetworking<a name="afnetworking/>
+Adding AFNetworking<a name="afnetworking"/>
 -------------------
 
 The Cocoa SAPI SDK uses AFNetworking under the hood. To avoid linking problems, you need to add AFNetworking to your project yourself. AFNetworking may change of course - the sample app successfully uses AFNetworking as at commit <AFNetworking/AFNetworking@3484605935a6ba68ee6dabe7c69efedb80ee08a7>
