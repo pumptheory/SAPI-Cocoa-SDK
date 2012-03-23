@@ -1,4 +1,3 @@
-
 Sensis SAPI Cocoa SDK ![SAPI Logo](http://img.tweetimag.es/i/sensisapi_b) ![Yellow Pages Logo](http://developers.sensis.com.au/files/yp-api-poweredby-sticky-71x78.png)
 =====================
 
@@ -37,15 +36,12 @@ See the [Classes](#classes) section below for information about the other endpoi
 Table of Contents
 =================
 
-<ul>
-<li style="margin-top: 0px;">
-[Adding the SAPI SDK to your project](#adding)
-</li>
+* [Adding the SAPI SDK to your project](#adding)
  * [Adding AFNetworking](#afnetworking)
  * [JSON Library](#json)
-<li style="margin-top: 0px;"> [Getting a SAPI Application Key](#key)
-<li style="margin-top: 0px;"> [Running the Unit Tests and Sample App](#sample)
-<li style="margin-top: 0px;"> [Classes](#classes)
+* [Getting a SAPI Application Key](#key)
+* [Running the Unit Tests and Sample App](#sample)
+* [Classes](#classes)
  * [SAPI](#sapi)
  * [SAPIError](#sapierror)
  * [Request Classes](#requestclasses)
@@ -57,10 +53,9 @@ Table of Contents
   * [SAPISearchResult](#sapisearchresult)
   * [SAPIMetadataResult](#sapimetadataresult)
   * [SAPIReportResult](#sapireportresult)
-<li style="margin-top: 0px;"> [Requirements](#requirements)
-<li style="margin-top: 0px;"> [Bugs &amp; Enhancements](#bugs)
-<li style="margin-top: 0px;"> [Brought to you by Sensis and Pumptheory](#credits)
-</ul>
+* [Requirements](#requirements)
+* [Bugs &amp; Enhancements](#bugs)
+* [Brought to you by Sensis and Pumptheory](#credits)
 
 Adding the SAPI SDK to your project<a name="adding"/>
 ===================================
