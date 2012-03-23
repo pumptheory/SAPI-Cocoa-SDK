@@ -38,7 +38,9 @@ Table of Contents
 =================
 
 <ul>
-<li style="margin-top: 0px;"> [Adding the SAPI SDK to your project](#adding)
+<li style="margin-top: 0px;">
+[Adding the SAPI SDK to your project](#adding)
+</li>
  * [Adding AFNetworking](#afnetworking)
  * [JSON Library](#json)
 <li style="margin-top: 0px;"> [Getting a SAPI Application Key](#key)
