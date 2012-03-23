@@ -1,4 +1,4 @@
-<img style="float: right; margin-top:25px;" src="http://img.tweetimag.es/i/sensisapi_o" alt="SAPI Logo" />
+![SAPI Logo](http://img.tweetimag.es/i/sensisapi_o)
 
 Sensis SAPI Cocoa SDK
 =====================
