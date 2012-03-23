@@ -8,9 +8,20 @@
 
 #import "SAPISearchResultTableViewController.h"
 
+#import "SAPISearchDetailListingViewController.h"
+#import "SAPIGetByListingId.h"
+#import "SVProgressHUD.h"
+
+@interface SAPISearchResultTableViewController ()
+
+@property (retain) SAPIGetByListingId * listingQuery;
+
+@end
+
 @implementation SAPISearchResultTableViewController
 
 @synthesize searchResult=_searchResult;
+@synthesize listingQuery=_listingQuery;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -24,6 +35,7 @@
 - (void)dealloc
 {
     [_searchResult release];
+    [_listingQuery release];
     
     [super dealloc];
 }
@@ -175,14 +187,33 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    if (indexPath.section == 0)
+    {
+        NSDictionary * listingDetail = [self.searchResult.results objectAtIndex:indexPath.row];
+        
+        self.listingQuery = [[[SAPIGetByListingId alloc] init] autorelease];
+        self.listingQuery.businessId = [listingDetail objectForKey:@"id"];
+        
+        [self.listingQuery performQueryAsyncSuccess:^(SAPISearchResult *result) {
+            [SVProgressHUD dismiss];
+            
+            if ([result.results count])
+            {
+                SAPISearchDetailListingViewController * vc = [[[SAPISearchDetailListingViewController alloc] initWithNibName:@"SAPISearchDetailListingViewController" bundle:nil] autorelease];
+                
+                vc.stringToDisplay = [[result.results objectAtIndex:0] description];
+
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+            else
+            {
+                [SVProgressHUD dismissWithError:@"Results array was empty" afterDelay:4];
+            }
+            
+        } failure:^(SAPIError *error) {
+            [SVProgressHUD dismissWithError:[error localizedDescription] afterDelay:4];
+        }];
+    }
 }
 
 @end

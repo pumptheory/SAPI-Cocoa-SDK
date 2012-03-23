@@ -38,6 +38,8 @@
 		645EFD93151BEAD300D50EDE /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EFD82151BEAD300D50EDE /* SVProgressHUD.m */; };
 		645EFD9C151BEDA100D50EDE /* SAPISearchResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EFD9A151BEDA100D50EDE /* SAPISearchResultTableViewController.m */; };
 		645EFD9D151BEDA100D50EDE /* SAPISearchResultTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645EFD9B151BEDA100D50EDE /* SAPISearchResultTableViewController.xib */; };
+		645EFDA1151BF37900D50EDE /* SAPISearchDetailListingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EFD9F151BF37900D50EDE /* SAPISearchDetailListingViewController.m */; };
+		645EFDA2151BF37900D50EDE /* SAPISearchDetailListingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645EFDA0151BF37900D50EDE /* SAPISearchDetailListingViewController.xib */; };
 		64A70DB6151AE076005859E4 /* SAPIISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A70DB5151AE076005859E4 /* SAPIISO8601DateFormatter.m */; };
 		64A70DB7151AE076005859E4 /* SAPIISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A70DB5151AE076005859E4 /* SAPIISO8601DateFormatter.m */; };
 		64AB066B151977F0009C66A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AB066A151977F0009C66A8 /* UIKit.framework */; };
@@ -133,6 +135,9 @@
 		645EFD99151BEDA100D50EDE /* SAPISearchResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPISearchResultTableViewController.h; sourceTree = "<group>"; };
 		645EFD9A151BEDA100D50EDE /* SAPISearchResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPISearchResultTableViewController.m; sourceTree = "<group>"; };
 		645EFD9B151BEDA100D50EDE /* SAPISearchResultTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAPISearchResultTableViewController.xib; sourceTree = "<group>"; };
+		645EFD9E151BF37900D50EDE /* SAPISearchDetailListingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPISearchDetailListingViewController.h; sourceTree = "<group>"; };
+		645EFD9F151BF37900D50EDE /* SAPISearchDetailListingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPISearchDetailListingViewController.m; sourceTree = "<group>"; };
+		645EFDA0151BF37900D50EDE /* SAPISearchDetailListingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAPISearchDetailListingViewController.xib; sourceTree = "<group>"; };
 		64A70DAF151ADF34005859E4 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		64A70DB2151AE042005859E4 /* LICENSE_ISO8601DateFormatter */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_ISO8601DateFormatter; sourceTree = "<group>"; };
 		64A70DB4151AE076005859E4 /* SAPIISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPIISO8601DateFormatter.h; sourceTree = "<group>"; };
@@ -353,6 +358,9 @@
 				645EFD99151BEDA100D50EDE /* SAPISearchResultTableViewController.h */,
 				645EFD9A151BEDA100D50EDE /* SAPISearchResultTableViewController.m */,
 				645EFD9B151BEDA100D50EDE /* SAPISearchResultTableViewController.xib */,
+				645EFD9E151BF37900D50EDE /* SAPISearchDetailListingViewController.h */,
+				645EFD9F151BF37900D50EDE /* SAPISearchDetailListingViewController.m */,
+				645EFDA0151BF37900D50EDE /* SAPISearchDetailListingViewController.xib */,
 			);
 			path = "Test iPhone App";
 			sourceTree = "<group>";
@@ -480,6 +488,7 @@
 				645EFD91151BEAD300D50EDE /* README.textile in Resources */,
 				645EFD92151BEAD300D50EDE /* SVProgressHUD.bundle in Resources */,
 				645EFD9D151BEDA100D50EDE /* SAPISearchResultTableViewController.xib in Resources */,
+				645EFDA2151BF37900D50EDE /* SAPISearchDetailListingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +552,7 @@
 				645EFD5F151B354200D50EDE /* SAPIReportResult.m in Sources */,
 				645EFD93151BEAD300D50EDE /* SVProgressHUD.m in Sources */,
 				645EFD9C151BEDA100D50EDE /* SAPISearchResultTableViewController.m in Sources */,
+				645EFDA1151BF37900D50EDE /* SAPISearchDetailListingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
