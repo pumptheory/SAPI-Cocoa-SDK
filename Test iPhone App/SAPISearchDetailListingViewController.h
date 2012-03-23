@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "SAPISearchResult.h"
+
 @interface SAPISearchDetailListingViewController : UIViewController
 
 @property (retain, nonatomic) IBOutlet UITextView *textView;
-@property (retain) NSString * stringToDisplay;
+@property (retain) SAPISearchResult * searchResult;
 
 @end

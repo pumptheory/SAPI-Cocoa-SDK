@@ -58,6 +58,7 @@
     [super viewDidLoad];
     
     self.errorField.text = @"";
+    self.title = @"SAPI Search";
 }
 
 - (void)viewDidUnload

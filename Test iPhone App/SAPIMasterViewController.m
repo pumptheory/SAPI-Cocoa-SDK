@@ -18,7 +18,7 @@
 {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
     {
-        self.title = NSLocalizedString(@"Master", @"Master");
+        self.title = @"SAPI Endpoints";
     }
     return self;
 }
@@ -64,12 +64,13 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
     {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
     // Configure the cell.
-    cell.textLabel.text = NSLocalizedString(@"Search", @"Search");
+    cell.textLabel.text = @"Search";
+    cell.detailTextLabel.text = @"Also GetListingById and Report";
     return cell;
 }
 

@@ -54,11 +54,7 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.title = @"SAPISearchResult";
 }
 
 - (void)viewDidUnload
@@ -201,7 +197,7 @@
             {
                 SAPISearchDetailListingViewController * vc = [[[SAPISearchDetailListingViewController alloc] initWithNibName:@"SAPISearchDetailListingViewController" bundle:nil] autorelease];
                 
-                vc.stringToDisplay = [[result.results objectAtIndex:0] description];
+                vc.searchResult = result;
 
                 [self.navigationController pushViewController:vc animated:YES];
             }
