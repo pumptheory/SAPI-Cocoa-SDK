@@ -1,7 +1,5 @@
-Sensis SAPI Cocoa SDK
+Sensis SAPI Cocoa SDK ![SAPI Logo](http://img.tweetimag.es/i/sensisapi_b) ![Yellow Pages Logo](http://developers.sensis.com.au/files/yp-api-poweredby-sticky-71x78.png)
 =====================
-
-![SAPI Logo](http://img.tweetimag.es/i/sensisapi_b) ![Yellow Pages Logo](http://developers.sensis.com.au/files/yp-api-poweredby-sticky-71x78.png)
 
 The Sensis API (SAPI) gives you access to Australian local business listings from Yellow Pages and White Pages.
 
@@ -35,7 +33,31 @@ searchQuery.query = @"Apple";
 
 See the [Classes](#classes) section below for information about the other endpoints  SAPIGetListingById, SAPIReport and SAPIMetadata.
 
-Adding the SAPI SDK to your project
+Table of Contents
+=================
+
+* [Adding the SAPI SDK to your project](#adding)
+ * [Adding AFNetworking](#afnetworking)
+ * [JSON Library](#json)
+* [Getting a SAPI Application Key](#key)
+* [Running the Unit Tests and Sample App](#sample)
+* [Classes](#classes)
+ * [SAPI](#sapi)
+ * [SAPIError](#sapierror)
+ * [Request Classes](#requestclasses)
+  * [SAPISearch](#sapisearch)
+  * [SAPIGetListingById](#sapigetlistingbyid)
+  * [SAPIMetadata](#sapimetadata)
+  * [SAPIReport](#sapireport)
+ * [Result Classes](#resultclasses)
+  * [SAPISearchResult](#sapisearchresult)
+  * [SAPIMetadataResult](#sapimetadataresult)
+  * [SAPIReportResult](#sapireportresult)
+* [Requirements](#requirements)
+* [Bugs &amp; Enhancements](#bugs)
+* [Brought to you by Sensis and Pumptheory](#credits)
+
+Adding the SAPI SDK to your project<a name="adding"/>
 ===================================
 
 All you really need to do is add all the`.m` and `.h` files in the `Sensis SAPI` subfolder (ie. <https://github.com/pumptheory/SAPI-Cocoa-SDK/tree/master/Sensis%20SAPI>), and also add the AFNetworking library to your project (see next section).
@@ -54,14 +76,14 @@ When you clone your project repository somewhere else, after the `git clone` you
 
 To learn more about git submodules, see <http://help.github.com/submodules/> and <http://book.git-scm.com/5_submodules.html>.
 
-Adding AFNetworking
+Adding AFNetworking<a name="afnetworking/>
 -------------------
 
 The Cocoa SAPI SDK uses AFNetworking under the hood. To avoid linking problems, you need to add AFNetworking to your project yourself. AFNetworking may change of course - the sample app successfully uses AFNetworking as at commit <AFNetworking/AFNetworking@3484605935a6ba68ee6dabe7c69efedb80ee08a7>
 
 AFNetworking is added very much like the SAPI SDK. See [Getting Started with AFNetworking](https://github.com/AFNetworking/AFNetworking/wiki/Getting-Started-with-AFNetworking) for suggestions on how you can add AFNetworking to your project.
 
-JSON Library
+JSON Library<a name="json"/>
 ------------
 
 The Cocoa SAPI SDK requires a JSON parsing library. If you are targeting iOS 5 or OSX 10.7 (or higher), the Apple supplied NSJSON* classes will be used automatically with no actions required on your part. If you are targeting iOS 4 or OSX 10.6, you need to add one of the following JSON libraries to your project:
@@ -75,12 +97,12 @@ If you have any of these in your project (even if you are targeting iOS5 or OSX 
 
     #define _AFNETWORKING_PREFER_NSJSONSERIALIZATION_
 
-Getting a SAPI Application Key
+Getting a SAPI Application Key<a name="key"/>
 ==============================
 
 For any of the SAPI requests to succeed, you need an API Key for the SAPI test environment. See <http://developers.sensis.com.au/docs/getting_started/Apply_for_an_API_key> for more information and <http://developers.sensis.com.au> to register. Test environment keys are provisioned automatically so apart from clicking a link in the confirmation email there is no waiting. Information on applying for a Production environment key is also at <http://developers.sensis.com.au/>.
 
-Running the Unit Tests and Sample App
+Running the Unit Tests and Sample App<a name="sample"/>
 =====================================
 
 After you clone the SAPI SDK git repository you need to update the submodules used by the SDK and the sample app and unit tests:
@@ -97,7 +119,7 @@ The one Xcode project contains the sample test app that you can run (⌘-R) and 
 Classes<a name="classes" />
 =======
 
-### SAPI
+### SAPI<a name="sapi" />
 
 This class has two class methods you use to set the API key and environment
 
@@ -108,7 +130,7 @@ This class has two class methods you use to set the API key and environment
 
 *Header:* [SAPI.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPI.h)
 
-### SAPIError
+### SAPIError<a name="sapierror" />
 
 A subclass of `NSError` which is set in the case of an error that resulted in you getting no results. You will want to check the error code to eg. differentiate between a server error and rate limiting (in the latter case retrying may work). The relevant codes are detailed in the header file, and you can see examples of checking the code in the unit tests.
 
@@ -118,40 +140,42 @@ A subclass of `NSError` which is set in the case of an error that resulted in yo
 
 *Relevant SAPI REST Docs:* See the relevant endpoint docs and [HTTP Status Codes](http://developers.sensis.com.au/docs/reference/HTTP_Status_Codes)
 
-Request Classes
+Request Classes<a name="requestclasses" />
 ---------------
 
-### SAPISearch
+### SAPISearch<a name="sapisearch" />
 
 Implements the SAPI search endpoint.
 
 Create an instance of `SAPISearch`, set properties relevant to your search criteria (at least one of `query` or `location` are required, then perform the query using either the asynchronous or synchronous method:
 
 ```objective-c
-- (void)performQueryAsyncSuccess:(void (^)(SAPISearchResult * result))successBloc failure:(void (^)(SAPIError * error))failureBlock
-- (SAPISearchResult *)performQueryWithError:(SAPIError **)error
+- (void)performQueryAsyncSuccess:(void (^)(SAPISearchResult * result))successBlock
+                         failure:(void (^)(SAPIError * error))failureBlock;
+- (SAPISearchResult *)performQueryWithError:(SAPIError **)error;
 ```
 
 *Headers:* [SAPISearch.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPISearch.h) ⇽ [SAPIEndpoint.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIEndpoint.h)
 
 *Relevant SAPI REST Docs:* [Search endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Search)
 
-### SAPIGetListingById
+### SAPIGetListingById<a name="sapigetlistingbyid" />
 
 Implements the SAPI getListingById endpoint.
 
 Create an instance of `SAPIGetListingById`, set the `businessId` property (which you obtained from the `id` key of a search result), then perform the query using either the asynchronous or synchronous method:
 
 ```objective-c
-- (void)performQueryAsyncSuccess:(void (^)(SAPISearchResult * result))successBloc failure:(void (^)(SAPIError * error))failureBlock
-- (SAPISearchResult *)performQueryWithError:(SAPIError **)error
+- (void)performQueryAsyncSuccess:(void (^)(SAPISearchResult * result))successBlock
+                         failure:(void (^)(SAPIError * error))failureBlock;
+- (SAPISearchResult *)performQueryWithError:(SAPIError **)error;
 ```
 
 *Headers:* [SAPIGetListingById.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIGetListingById.h) ⇽ [SAPIEndpoint.h](https://github.com/pumptheory/SAPI-Cocoa-SDK/blob/master/Sensis%20SAPI/SAPIEndpoint.h)
 
 *Relevant SAPI REST Docs:* [getListingById endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Get_by_Listing_ID)
 
-### SAPIMetadata
+### SAPIMetadata<a name="sapimetadata" />
 
 Implements the metadata endpoint for obtaining categories or categoryGroups metadata.
 
@@ -159,7 +183,7 @@ Implements the metadata endpoint for obtaining categories or categoryGroups meta
 
 *Relevant SAPI REST Docs:* [metadata endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Metadata)
 
-### SAPIReport
+### SAPIReport<a name="sapireport" />
 
 Implements the reporting endpoint.
 
@@ -167,10 +191,10 @@ Implements the reporting endpoint.
 
 *Relevant SAPI REST Docs:* [report endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Report); [Reporting Usage Events](http://developers.sensis.com.au/docs/endpoint_reference/Reporting_Usage_Events)
 
-Result Classes
+Result Classes<a name="resultclasses" />
 --------------
 
-### SAPISearchResult
+### SAPISearchResult<a name="sapisearchresult" />
 
 An instance of this is returned, or passed into the success block, in the case of a successful search or getListingById query (in the latter case there will always be only zero or one dictionary in the results array).
 
@@ -180,7 +204,7 @@ The main results are in the `results` property, as an array of dictionaries form
 
 *Relevant SAPI REST Docs:* [Search endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Search); [Listing Schema](http://developers.sensis.com.au/docs/reference/Listing_Schema)
 
-### SAPIMetadataResult
+### SAPIMetadataResult<a name="sapimetadataresult" />
 
 An instance of this is returned, or passed into the success block, in the case of a successful metadata query. Set the `dataType` property to one of `SAPIMetadataCategoriesKey` or `SAPIMetadataCategoryGroupsKey` before executing the query. One of the `categories` or `categoryGroups` array properties are set - depending on which query was performed.
 
@@ -188,7 +212,7 @@ An instance of this is returned, or passed into the success block, in the case o
 
 *Relevant SAPI REST Docs:* [metadata endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Metadata)
 
-### SAPIReportResult
+### SAPIReportResult<a name="sapireportresult" />
 
 An instance of this is returned, or passed into the success block, in the case of a successful report query. Different properties are required for different reporting types. See the header and HTTP docs for more info.
 
@@ -197,7 +221,7 @@ An instance of this is returned, or passed into the success block, in the case o
 *Relevant SAPI REST Docs:* [report endpoint](http://developers.sensis.com.au/docs/endpoint_reference/Report)<br /><br />[Reporting Usage Events](http://developers.sensis.com.au/docs/endpoint_reference/Reporting_Usage_Events)
 
 
-Requirements
+Requirements<a name="requirements" />
 ============
 
 Because the SDK (and AFNetworking) rely on blocks, iOS 4, Mac OSX Lion, or higher, are required.
@@ -205,12 +229,12 @@ Because the SDK (and AFNetworking) rely on blocks, iOS 4, Mac OSX Lion, or highe
 ARC is not used by either the SDK or AFNetworking, so if your project is ARC based you need to use the `-fno-objc-arc` compiler flag for the SAPI SDK and AFNetworking classes. How to do this is discussed in [Getting Started with AFNetworking](https://github.com/AFNetworking/AFNetworking/wiki/Getting-Started-with-AFNetworking).
 
 
-Bugs & Enhancements
+Bugs &amp; Enhancements<a name="bugs" />
 ===================
 
 Please report any bugs using GitHub Issues and feel free to send GitHub pull requests for bug fixes or enhancements.
 
-Brought to you by Sensis and Pumptheory
+Brought to you by Sensis and Pumptheory<a name="credits" />
 =======================================
 
 This Cocoa SAPI SDK was developed by [Pumptheory](http://pumptheory.com) for the Sensis SAPI Hackathons. Follow the [@sensisapi](http://twitter.com/sensisapi) Twitter account for information about upcoming hackathons near you.
