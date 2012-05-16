@@ -1,4 +1,4 @@
-Sensis SAPI Cocoa SDK ![SAPI Logo](http://img.tweetimag.es/i/sensisapi_b) ![Yellow Pages Logo](http://developers.sensis.com.au/files/yp-api-poweredby-sticky-71x78.png)
+Sensis SAPI Cocoa SDK ![SAPI Logo](http://img.tweetimag.es/i/SensisAPI_b) ![Yellow Pages Logo](http://developers.sensis.com.au/files/yp-api-poweredby-sticky-71x78.png)
 =====================
 
 The Sensis API (SAPI) gives you access to Australian local business listings from Yellow Pages and White Pages.
